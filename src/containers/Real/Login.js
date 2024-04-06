@@ -86,7 +86,7 @@ class Login extends Component {
                         </div>
                         <div className='col-12 form-group input-login'>
                             <div className='input-password'>
-                                <i class="fas fa-lock iconlock"></i>
+                                <i className="fas fa-lock iconlock"></i>
                                 <input
                                     type={this.state.showpass ? 'text' : 'password'}
                                     className='form-control' placeholder='............'
@@ -94,7 +94,7 @@ class Login extends Component {
                                     onChange={(event) => this.handleOnChangleInput(event)}
                                 >
                                 </input>
-                                <i class={this.state.showpass ? 'far fa-eye iconeye' : 'fas fa-eye-slash iconeye'} onClick={() => { this.handleeye() }}></i>
+                                <i className={this.state.showpass ? 'far fa-eye iconeye' : 'fas fa-eye-slash iconeye'} onClick={() => { this.handleeye() }}></i>
                             </div>
                         </div>
 
@@ -115,11 +115,11 @@ class Login extends Component {
 
                         <div className='col-12 social-login'>
                             <div className='facebook'>
-                                <i class="fab fa-facebook"></i>
+                                <i className="fab fa-facebook"></i>
                                 <span>Facebook</span>
                             </div>
                             <div className='google'>
-                                <i class="fab fa-google"></i>
+                                <i className="fab fa-google"></i>
                                 <span>Google</span>
                             </div>
                         </div>
