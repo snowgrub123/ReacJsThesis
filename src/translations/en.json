@@ -1,4 +1,20 @@
 {
+    "homeheader": {
+        "speciality": "CLasses",
+        "listClass": "List of class",
+        "teacher": "Teacher",
+        "listTeacher": "List of Teacher",
+        "subject": "Subject",
+        "listSubject": "List of Subject",
+        "information": "Information",
+        "detailInfo": "Information you should know",
+        "support": "Support"
+    },
+    "homecenter": {
+        "title1": "Edution Master",
+        "title2": "The bestest choice",
+        "placeHolder": "Look up information"
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",
@@ -31,8 +47,7 @@
             "system-administrator": {
                 "header": "System Administrator",
                 "user-manage": "User manage",
-                "product-manage": "Package manage",
-                "register-package-group-or-account": "Register service package for group/account"
+                "user-redux": "User Redux manage"
             },
             "system-parameter": {
                 "header": "System-parameter"

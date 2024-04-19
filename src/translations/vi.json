@@ -1,4 +1,20 @@
 {
+    "homeheader": {
+        "speciality": "Lớp học",
+        "listClass": "Danh sách các lớp học",
+        "teacher": "Giáo viên",
+        "listTeacher": "Danh sách giảng viên",
+        "subject": "Môn học",
+        "listSubject": "Danh sách môn học",
+        "information": "Thông tin",
+        "detailInfo": "Thông tin bạn cần biết",
+        "support": "Hỗ trợ"
+    },
+    "homecenter": {
+        "title1": "Tinh hoa kiến thức",
+        "title2": "Mở rộng tương lai",
+        "placeHolder": "Tìm kiếm thông tin"
+    },
     "common": {
         "add": "Thêm",
         "edit": "Sửa",
@@ -31,8 +47,7 @@
             "system-administrator": {
                 "header": "Quản trị hệ thống",
                 "user-manage": "Quản lý người sử dụng",
-                "product-manage": "Quản lý gói",
-                "register-package-group-or-account": "Đăng ký gói dịch vụ cho nhóm/tài khoản"
+                "user-redux": "Quản lý user by redux"
             },
             "system-parameter": {
                 "header": "Tham số hệ thống"
