@@ -9,6 +9,8 @@ class ModalUser extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            ho: '',
+            ten: '',
             email: '',
             matKhau: '',
             diaChi: '',
@@ -18,6 +20,8 @@ class ModalUser extends Component {
     listenEmiiter() {
         emitter.on("clear all data after adding new user!", () => {
             this.setState({
+                ho: '',
+                ten: '',
                 email: '',
                 matKhau: '',
                 diaChi: '',
@@ -45,7 +49,7 @@ class ModalUser extends Component {
     }
     checkValideInput = () => {
         let isValid = true;
-        let arr = ['email', 'matKhau', 'diaChi'];
+        let arr = ['ho', 'ten', 'email', 'matKhau', 'diaChi'];
         for (let i = 0; i < arr.length; i++) {
             if (!this.state[arr[i]]) {
                 isValid = false;
@@ -80,6 +84,18 @@ class ModalUser extends Component {
                 <ModalHeader toggle={() => { this.toggle() }}>Create A New User</ModalHeader>
                 <ModalBody>
                     <div className='Modal-user-body'>
+                        <div className='input-container'>
+                            <label>Fristname</label>
+                            <input type='text' onChange={(event) => { this.handleOnChangeInput(event, "ho") }}
+                                value={this.state.ho}
+                            ></input>
+                        </div>
+                        <div className='input-container'>
+                            <label>Lastname</label>
+                            <input type='text' onChange={(event) => { this.handleOnChangeInput(event, "ten") }}
+                                value={this.state.ten}
+                            ></input>
+                        </div>
                         <div className='input-container'>
                             <label>Email</label>
                             <input type='text' onChange={(event) => { this.handleOnChangeInput(event, "email") }}

@@ -10,11 +10,11 @@ class HomeHeader extends Component {
     changeLanguage = (language) => {
         this.props.changeLanguageFromAppHome(language)
         // fire redux event: actions (event)
-
     }
     render() {
         // console.log("Check props: ", this.props)
         let language = this.props.language;
+        console.log('Check userInfoL:', this.props.userInfo)
         return (
             <React.Fragment>
                 <div className='home-header-container'>
@@ -35,7 +35,6 @@ class HomeHeader extends Component {
 
                                 <div className='child-content-title'>
                                     <div><FormattedMessage id="homeheader.listTeacher"></FormattedMessage></div>
-
                                 </div>
                             </div>
                             <div className='child-content'>
@@ -43,7 +42,6 @@ class HomeHeader extends Component {
 
                                 <div className='child-content-title'>
                                     <div><FormattedMessage id="homeheader.listSubject"></FormattedMessage></div>
-
                                 </div>
                             </div>
                             <div className='child-content'>
@@ -51,27 +49,18 @@ class HomeHeader extends Component {
 
                                 <div className='child-content-title'>
                                     <div><FormattedMessage id="homeheader.detailInfo"></FormattedMessage></div>
-
                                 </div>
                             </div>
-
                         </div>
                         <div className='right-content'>
                             <div className='help-content'>
                                 <i className="fas fa-question-circle"></i>
                                 <div><FormattedMessage id="homeheader.support"></FormattedMessage></div>
-
                             </div>
                             <div className={language === languages.VI ? 'language-vi active' : 'language-vi'}><span onClick={() => this.changeLanguage(languages.VI)}>VN</span></div>
                             <div className={language === languages.EN ? 'language-en active' : 'language-en'}><span onClick={() => this.changeLanguage(languages.EN)}>EN</span></div>
-
-
-
-
                         </div>
                     </div>
-
-
                 </div>
                 <div className='home-body-container'>
                     <div className='content-bodyUp'>
@@ -119,16 +108,14 @@ class HomeHeader extends Component {
 
         );
     }
-
 }
-
 const mapStateToProps = state => {
     return {
         isLoggedIn: state.user.isLoggedIn,
         language: state.app.language,
+        userInfo: state.user.userInfo,
     };
 };
-
 const mapDispatchToProps = dispatch => {
     return {
         changeLanguageFromAppHome: (language) => dispatch(changeLanguageFromApp(language))

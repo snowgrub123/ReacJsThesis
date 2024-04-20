@@ -150,7 +150,8 @@ class UserManage extends Component {
                     <table id="customers">
                         <tbody>
                             <tr>
-                                <th>Fullname</th>
+                                <th>Fristname</th>
+                                <th>Lastname</th>
                                 <th>email</th>
                                 <th>MatKhau</th>
                                 <th>DiaChi</th>
@@ -162,7 +163,8 @@ class UserManage extends Component {
                                 // console.log('text map', item, index)
                                 return (
                                     <tr>
-                                        <td>{item.hoTen}</td>
+                                        <td>{item.ho}</td>
+                                        <td>{item.ten}</td>
                                         <td>{item.email}</td>
                                         <td>{item.matKhau}</td>
                                         <td>{item.diaChi}</td>

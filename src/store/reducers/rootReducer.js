@@ -19,10 +19,16 @@ const userPersistConfig = {
     key: 'user',
     whitelist: ['isLoggedIn', 'userInfo']
 };
+const appPersistConfig = {
+    ...persistCommonConfig,
+    key: 'app',
+    whitelist: ['language']
+}
 
 export default (history) => combineReducers({
     router: connectRouter(history),
     user: persistReducer(userPersistConfig, userReducer),
+    app: persistReducer(appPersistConfig, appReducer),
     // user: userReducer, // it can be affect when I try to refresh the website
-    app: appReducer
+    // app: appReducer
 })
