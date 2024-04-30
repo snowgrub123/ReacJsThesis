@@ -1,0 +1,34 @@
+.preview-img-container {
+    display   : flex;
+    text-align: center;
+
+    .label-upload {
+        display      : flex;
+        align-items  : center;
+        text-align   : center;
+        padding      : 5px;
+        border-radius: 4px;
+        width        : 70px;
+        background   : #ddd;
+        cursor       : pointer;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+    }
+
+    .prevew-image {
+        height            : 50px;
+        width             : 70%;
+        // border         : 1px solid gray;
+        background        : center center no-repeat;
+        background-size   : contain;
+    }
+
+    .btn-warning {
+        background-color: orange !important;
+    }
+
+
+}

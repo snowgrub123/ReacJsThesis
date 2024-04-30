@@ -42,8 +42,10 @@
         "address": "address",
         "city": "City",
         "gender": "Gender",
+        "position": "Position",
         "roleId": "Role",
         "avatar": "Avatar",
-        "save": "Save"
+        "save": "Save",
+        "edit": "Edit user"
     }
 }

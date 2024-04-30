@@ -42,8 +42,10 @@
         "address": "Địa chỉ",
         "city": "Thành Phố",
         "gender": "Giới Tính",
+        "position": "Hoc Vi",
         "roleId": "Vai Trò",
         "avatar": "Ảnh Đại Diện",
-        "save": "Lưu"
+        "save": "Lưu",
+        "edit": "Chỉnh sửa"
     }
 }
