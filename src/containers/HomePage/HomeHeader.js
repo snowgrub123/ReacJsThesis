@@ -5,23 +5,30 @@ import './HomeHeader.scss'
 import { languages } from '../../utils';
 import { FormattedMessage } from 'react-intl';
 import { changeLanguageFromApp } from '../../store/actions';
+import { withRouter } from 'react-router';
 class HomeHeader extends Component {
 
     changeLanguage = (language) => {
         this.props.changeLanguageFromAppHome(language)
         // fire redux event: actions (event)
     }
+
+    returnToHome = () => {
+        if (this.props.history) {
+            this.props.history.push(`/home`)
+        }
+    }
     render() {
-        // console.log("Check props: ", this.props)
         let language = this.props.language;
-        console.log('Check userInfoL:', this.props.userInfo)
         return (
             <React.Fragment>
                 <div className='home-header-container'>
                     <div className='home-header-content'>
                         <div className='left-content'>
                             <i className="fas fa-list"></i>
-                            <div className='logo-header'></div>
+                            <div className='logo-header'
+                                onClick={() => this.returnToHome()}
+                            ></div>
                         </div>
                         <div className='center-content'>
                             <div className='child-content'>
@@ -62,48 +69,51 @@ class HomeHeader extends Component {
                         </div>
                     </div>
                 </div>
-                <div className='home-body-container'>
-                    <div className='content-bodyUp'>
-                        <div className='title1'>
-                            <FormattedMessage id="homecenter.title1"></FormattedMessage>
-                        </div>
-                        <div className='title2'><FormattedMessage id="homecenter.title2"></FormattedMessage></div>
-                        <div className='sreach'>
-                            <i className="fas fa-search"></i>
-                            {<input type='text' placeholder='Tìm kiếm thông tin'>
 
-                            </input>}
-                        </div>
-                    </div>
-                    <div className='content-bodyDown'>
-                        <div className='option'>
-                            <div className='option-child'>
-                                <div className='icon-option-child'>
-                                    <i className="fas fa-book"></i>
-                                </div>
-                                <div className='content-option-child'>
-                                    <span>Lớp học</span>
-                                </div>
+                {this.props.isShowBanner === true &&
+                    <div className='home-body-container'>
+                        <div className='content-bodyUp'>
+                            <div className='title1'>
+                                <FormattedMessage id="homecenter.title1"></FormattedMessage>
                             </div>
-                            <div className='option-child'>
-                                <div className='icon-option-child'>
-                                    <i className="fas fa-book"></i>
-                                </div>
-                                <div className='content-option-child'>
-                                    <span>Giảng Viên</span>
-                                </div>
-                            </div>
-                            <div className='option-child'>
-                                <div className='icon-option-child'>
-                                    <i className="fas fa-book"></i>
-                                </div>
-                                <div className='content-option-child'>
-                                    <span>Giảng Viên</span>
-                                </div>
+                            <div className='title2'><FormattedMessage id="homecenter.title2"></FormattedMessage></div>
+                            <div className='sreach'>
+                                <i className="fas fa-search"></i>
+                                {<input type='text' placeholder='Tìm kiếm thông tin'>
+
+                                </input>}
                             </div>
                         </div>
+                        <div className='content-bodyDown'>
+                            <div className='option'>
+                                <div className='option-child'>
+                                    <div className='icon-option-child'>
+                                        <i className="fas fa-book"></i>
+                                    </div>
+                                    <div className='content-option-child'>
+                                        <span>Lớp học</span>
+                                    </div>
+                                </div>
+                                <div className='option-child'>
+                                    <div className='icon-option-child'>
+                                        <i className="fas fa-book"></i>
+                                    </div>
+                                    <div className='content-option-child'>
+                                        <span>Giảng Viên</span>
+                                    </div>
+                                </div>
+                                <div className='option-child'>
+                                    <div className='icon-option-child'>
+                                        <i className="fas fa-book"></i>
+                                    </div>
+                                    <div className='content-option-child'>
+                                        <span>Giảng Viên</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                }
             </React.Fragment >
 
         );
@@ -122,4 +132,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeHeader));

@@ -30,6 +30,9 @@
             "manage-post": "Quản Lý Bài Đăng",
             "subject": "Môn học",
             "manage-subject": "Quản Lý Môn học"
+        },
+        "teacher": {
+            "manage-schedule": "Quản Lý Kế Hoạch Dạy Học"
         }
     },
     "manage-user": {
@@ -47,5 +50,23 @@
         "avatar": "Ảnh Đại Diện",
         "save": "Lưu",
         "edit": "Chỉnh sửa"
+    },
+    "homepage": {
+        "outstanding-teacher": "Giáo Viên Nổi Bật Trong Tuần",
+        "more-infor": "Xem Thêm"
+    },
+    "manage-schedule": {
+        "title": "Quản Lý Lịch Hẹn Giáo Viên",
+        "choose-teacher": "Chọn giáo viên",
+        "choose-date": "Chọn ngày",
+        "save": "Lưu Thông Tin"
+    },
+    "student": {
+        "detail-teacher": {
+            "schedule": "Lịch khám",
+            "no-schedule": "Không có!",
+            "choose": "Chọn ",
+            "book-free": " Đặt Lịch Miễn Phí"
+        }
     }
 }

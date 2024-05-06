@@ -5,6 +5,9 @@ import {
     getAllUsers,
     deleteFromServive,
     editFromServive,
+    getTopTeacherHomeService,
+    getAllTeacherService,
+    saveDetailTeacherService
 } from '../../services/accService';
 import { data, type } from 'jquery';
 import { toast } from 'react-toastify';
@@ -210,3 +213,125 @@ export const editUser = (data) => {
         }
     }
 }
+
+
+
+// Teacher
+export const fetchTopTeacher = () => {
+    return async (dispatch, getState) => {
+        try {
+            let respone = await getTopTeacherHomeService('');
+            if (respone && respone.errCode === 0) {
+                dispatch({
+                    type: actionTypes.FETCH_TOP_TEACHER_SUCCESS,
+                    dataTeachers: respone.data
+                })
+            } else {
+                dispatch({
+                    type: actionTypes.FETCH_TOP_TEACHER_FAILED,
+                })
+            }
+        } catch (error) {
+            console.log('FETCH_TOP_TEACHER_FAILED', error)
+            dispatch({
+                type: actionTypes.FETCH_TOP_TEACHER_FAILED,
+            })
+        }
+    }
+}
+
+
+
+export const fetchAllTeachers = () => {
+    return async (dispatch, getState) => {
+        try {
+            let respone = await getAllTeacherService();
+            if (respone && respone.errCode === 0) {
+                dispatch({
+                    type: actionTypes.FETCH_ALL_TEACHER_SUCCESS,
+                    dataAllTeachers: respone.data
+                })
+            } else {
+                dispatch({
+                    type: actionTypes.FETCH_ALL_TEACHER_FAILED,
+                })
+            }
+        } catch (error) {
+            console.log('FETCH_ALL_TEACHER_FAILED', error)
+            dispatch({
+                type: actionTypes.FETCH_TOP_TEACHER_FAILED,
+            })
+        }
+    }
+}
+
+// FETCH_ALL_TEACHER_SUCCESS: 'FETCH_ALL_TEACHER_SUCCESS',
+//     FETCH_ALL_TEACHER_FAILED: 'FETCH_ALL_TEACHER_FAILED',
+
+
+// SAVE_DETAIL_TEACHER_SUCCESS: 'SAVE_DETAIL_TEACHER_SUCCESS',
+// SAVE_DETAIL_TEACHER_FAILED: 'SAVE_DETAIL_TEACHER_FAILED',
+
+export const saveInforTeachers = (data) => {
+    return async (dispatch, getState) => {
+        try {
+            let respone = await saveDetailTeacherService(data);
+            console.log(respone)
+            if (respone && respone.errCode === 0) {
+                toast.success('Save infor teachers succeed')
+                dispatch({
+                    type: actionTypes.SAVE_DETAIL_TEACHER_SUCCESS,
+                })
+            } else {
+                toast.error('Save infor teachers failed')
+                dispatch({
+                    type: actionTypes.SAVE_DETAIL_TEACHER_FAILED,
+                })
+            }
+        } catch (error) {
+            console.log('SAVE_DETAIL_TEACHER_FAILED', error)
+            dispatch({
+                type: actionTypes.SAVE_DETAIL_TEACHER_FAILED,
+            })
+        }
+    }
+}
+
+
+
+export const fetchAllScheduleTime = () => {
+    return async (dispatch, getState) => {
+        try {
+            let respone = await getAllCodeService("TIME");
+            // console.log("check time", respone)
+            if (respone && respone.errCode === 0) {
+                dispatch({
+                    type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS,
+                    dataTime: respone.data
+                })
+            } else {
+                dispatch({
+                    type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED,
+                })
+            }
+        } catch (error) {
+            dispatch({
+                type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED,
+            })
+        }
+    }
+
+}
+// return async (dispatch, getState) => {
+//     try {
+//         dispatch({ type: actionTypes.FETCH_GENDER_START })
+//         let respone = await getAllCodeService("POSITION");
+//         if (respone && respone.errCode === 0) {
+//             dispatch(fetchPositionSuccess(respone.data));
+//         } else {
+//             dispatch(fetchPositionFailed());
+//         }
+//     } catch (error) {
+//         dispatch(fetchPositionFailed());
+//         console.log('check fetchStart from error', error)
+//     }

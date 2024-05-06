@@ -16,7 +16,9 @@ export const adminMenu = [
             },
             {
                 name: 'menu.admin.manage-student', link: '/system/manage-student'
-            }
+            }, { //Quản Lý Kế Hoạch Dạy Học
+                name: 'menu.teacher.manage-schedule', link: '/teacher/manage-schedule'
+            },
 
         ]
     },
@@ -46,7 +48,16 @@ export const adminMenu = [
     },
 ];
 
-
+export const teacherMenu = [
+    { //Quản Lý Kế Hoạch Dạy Học
+        name: 'menu.admin.manage-user',
+        menus: [
+            {
+                name: 'menu.teacher.manage-schedule', link: '/teacher/manage-schedule'
+            },
+        ]
+    }
+]
 
 
 // name: 'menu.system.system-administrator.header',

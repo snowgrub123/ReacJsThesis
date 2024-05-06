@@ -98,6 +98,10 @@
             .slick-slider {
                 height: 100%;
 
+                .slick-disabled {
+                    display: none !important;
+                }
+
                 .slick-prev {
                     left         : -10px !important;
                     background   : rgb(217, 202, 204) !important;
@@ -127,34 +131,45 @@
                 }
             }
 
-            .class-img {
-                margin-top        : 20px;
-                background-size   : cover;
-                height            : 200px;
-                border            : none;
-                width             : 85%;
-                margin-left       : 10px;
-                // border         : 1px solid white;
-                // border         : 1px solid black;
-                cursor            : pointer;
+            .class-customize {
+                display            : flex;
+                justify-content    : space-evenly;
+                height             : 270px;
+                cursor             : pointer;
+                // background-color: aquamarine;
+                border             : 1px solid rgb(165, 157, 157);
 
-                &.stage-class {
-                    background: url('../../assets/class/Class.jpg') center no-repeat;
+                .class-img {
+                    margin         : 0 auto;
+                    background-size: cover;
+                    border         : 1px solid blue;
+                    cursor         : pointer;
+
+                    &.stage-class {
+                        background: url('../../assets/class/Class.jpg') center no-repeat;
+                    }
+
+                    &.stage-teacher-img {
+                        // background: url('../../assets/teacher/pic.jpg') center no-repeat;
+                        width        : 150px;
+                        height       : 150px;
+                        border-radius: 50%;
+                        margin-top   : 19px;
+
+                    }
+
+                    &.stage-subject-img {
+                        background: url('../../assets/subject/math.jpg') center no-repeat;
+                    }
+
+                    // &.stage-advertisement-img {
+                    //     background: url('../../assets/subject/math.jpg') center no-repeat;
+                    // }
+
                 }
-
-                &.stage-teacher-img {
-                    background: url('../../assets/teacher/pic.jpg') center no-repeat;
-                }
-
-                &.stage-subject-img {
-                    background: url('../../assets/subject/math.jpg') center no-repeat;
-                }
-
-                // &.stage-advertisement-img {
-                //     background: url('../../assets/subject/math.jpg') center no-repeat;
-                // }
-
             }
+
+
         }
 
     }

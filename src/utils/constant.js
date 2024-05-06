@@ -3,7 +3,9 @@ export const path = {
     HOMEPAGE: '/home',
     LOGIN: '/login',
     LOG_OUT: '/logout',
-    SYSTEM: '/system'
+    SYSTEM: '/system',
+    DETAIL_TEACHER: '/detail-teacher/:id',
+    TEACHER: '/teacher/'
 };
 
 export const languages = {
@@ -30,4 +32,9 @@ export const dateFormat = {
 export const YesNoObj = {
     YES: 'Y',
     NO: 'N'
+}
+export const USER_ROLE = {
+    ADMIN: 'R1',
+    TEACHER: 'R2',
+    STUDENT: 'R3'
 }

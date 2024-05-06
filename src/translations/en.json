@@ -30,6 +30,9 @@
             "manage-post": "Manage-post",
             "subject": "Subject",
             "manage-subject": "Manage-subject"
+        },
+        "teacher": {
+            "manage-schedule": "Manage Teacher's schedule"
         }
     },
     "manage-user": {
@@ -47,5 +50,23 @@
         "avatar": "Avatar",
         "save": "Save",
         "edit": "Edit user"
+    },
+    "homepage": {
+        "outstanding-teacher": "Last week's featured teacher",
+        "more-infor": "More infor"
+    },
+    "manage-schedule": {
+        "title": "Manage teacher's appoinment",
+        "choose-teacher": "Choose teacher",
+        "choose-date": "Choose date",
+        "save": "Save teacher infor"
+    },
+    "student": {
+        "detail-teacher": {
+            "schedule": "Schedule",
+            "no-schedule": "Teacher have no schedule during this period.Please come back in the next time or Choose another time!",
+            "choose": "Chosse ",
+            "book-free": " Book-Free"
+        }
     }
 }

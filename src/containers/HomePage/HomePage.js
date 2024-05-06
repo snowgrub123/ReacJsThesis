@@ -10,19 +10,24 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Advertisement from './Section/Advertisement';
 import HomeFotter from './HomeFotter';
+import { event } from 'jquery';
 class HomePage extends Component {
 
+
+    handleAfterChange = (event, current) => {
+
+    }
     render() {
         let settings = {
             dots: true,
-            infinite: true,
+            infinite: false,
             speed: 500,
-            slidesToShow: 2,
+            slidesToShow: 4,
             slidesToScroll: 2
         };
         return (
             <div>
-                <HomeHeader />
+                <HomeHeader isShowBanner={true} />
                 <Class settings={settings} />
                 <TeacherInfo settings={settings} />
                 <Subject settings={settings} />

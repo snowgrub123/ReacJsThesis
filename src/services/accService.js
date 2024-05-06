@@ -28,6 +28,28 @@ const getAllCodeService = (inputType) => {
     return axios.get(`/api/allcode?type=${inputType}`)
 }
 
+const getTopTeacherHomeService = (limit) => {
+    return axios.get(`api/top-doctor-home?limit=${limit}`)
+}
+const getAllTeacherService = () => {
+    return axios.get(`api/get-all-teacher`)
+}
+const saveDetailTeacherService = (data) => {
+    return axios.post('/api/save-infor-teacher', data)
+}
+
+const getDetailTeacherInfoService = (inputId) => {
+    return axios.get(`/api/get-detail-teacher-by-id?id=${inputId}`)
+}
+
+const saveBulkScheduleTeacherService = (data) => {
+    return axios.post('/api/bulk-create-schesule', data)
+}
+const getScheduleTeacherByDateService = (teacherID, date) => {
+    return axios.get(`/api/get-schedule-teacher-by-date?giaoVienID=${teacherID}&date=${date}`)
+}
+
+
 export {
     handleLoginUser,
     getAllUsers,
@@ -35,4 +57,10 @@ export {
     deleteFromServive,
     editFromServive,
     getAllCodeService,
+    getTopTeacherHomeService,
+    getAllTeacherService,
+    saveDetailTeacherService,
+    getDetailTeacherInfoService,
+    saveBulkScheduleTeacherService,
+    getScheduleTeacherByDateService,
 }

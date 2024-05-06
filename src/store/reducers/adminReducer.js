@@ -4,7 +4,12 @@ const initialState = {
     roles: [],
     positions: [],
     isLoadingGender: false,
-    users: []
+    users: [],
+
+    topTeachers: [],
+    allTeachers: [],
+    allScheduleTime: [],
+
 }
 const adminReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -75,6 +80,44 @@ const adminReducer = (state = initialState, action) => {
             return {
                 ...state,
             }
+
+
+        //Top Teacher
+        case actionTypes.FETCH_TOP_TEACHER_SUCCESS:
+            state.topTeachers = action.dataTeachers;
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_TOP_TEACHER_FAILED:
+            state.topTeachers = [];
+            return {
+                ...state,
+            }
+
+        //all doctor
+        case actionTypes.FETCH_ALL_TEACHER_SUCCESS:
+            state.allTeachers = action.dataAllTeachers;
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_ALL_TEACHER_FAILED:
+            state.allTeachers = [];
+            return {
+                ...state,
+            }
+
+        //Time
+        case actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS:
+            state.allScheduleTime = action.dataTime;
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS:
+            state.allScheduleTime = [];
+            return {
+                ...state,
+            }
+
         default:
             return state;
 

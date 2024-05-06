@@ -5,6 +5,17 @@ import { connect } from 'react-redux';
 import * as actions from "../../../store/actions";
 import './TableManageUser.scss';
 
+import MarkdownIt from 'markdown-it';
+import MdEditor from 'react-markdown-editor-lite';
+// import style manually
+import 'react-markdown-editor-lite/lib/index.css';
+
+const mdParser = new MarkdownIt(/* Markdown-it options */);
+
+// Finish!
+function handleEditorChange({ html, text }) {
+    console.log('handleEditorChange', html, text);
+}
 
 class TableManageUser extends Component {
     constructor(props) {
@@ -33,46 +44,53 @@ class TableManageUser extends Component {
         this.props.handleEditUserFromParentKey(user)
     }
     render() {
-        console.log("Check all User:", this.props.listUsers)
-        console.log('check state', this.state.usersRedux)
-        let arrUsers = this.state.usersRedux;
-        return (
-            <table id='TableManageUser'>
-                <tbody>
-                    <tr>
-                        <th>Fristname</th>
-                        <th>Lastname</th>
-                        <th>email</th>
-                        <th>MatKhau</th>
-                        <th>DiaChi</th>
-                        <th>GioiTinh</th>
-                        <th>actions</th>
-                    </tr>
-                    {arrUsers && arrUsers.length > 0 &&
-                        arrUsers.map((item, index) => {
-                            return (
-                                <tr key={index}>
-                                    <td>{item.ho}</td>
-                                    <td>{item.ten}</td>
-                                    <td>{item.email}</td>
-                                    <td>{item.matKhau}</td>
-                                    <td>{item.diaChi}</td>
-                                    <td>{item.gioiTinh}</td>
-                                    <td>
-                                        <button
-                                            onClick={() => this.handleEditUser(item)}
-                                            className='btn-edit'>< i className="fas fa-pencil-alt"></i></button>
 
-                                        <button
-                                            onClick={() => this.handleDeleteUser(item)}
-                                            className='btn-delete'><i className="fas fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                            )
-                        })
-                    }
-                </tbody >
-            </table >
+        // console.log("Check all User:", this.props.listUsers)
+        // console.log('check state', this.state.usersRedux)
+        let arrUsers = this.state.usersRedux;
+
+        return (
+            <React.Fragment>
+                <table id='TableManageUser'>
+                    <tbody>
+                        <tr>
+                            <th>Fristname</th>
+                            <th>Lastname</th>
+                            <th>email</th>
+                            <th>MatKhau</th>
+                            <th>DiaChi</th>
+                            <th>GioiTinh</th>
+                            <th>actions</th>
+                        </tr>
+                        {arrUsers && arrUsers.length > 0 &&
+                            arrUsers.map((item, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>{item.ho}</td>
+                                        <td>{item.ten}</td>
+                                        <td>{item.email}</td>
+                                        <td>{item.matKhau}</td>
+                                        <td>{item.diaChi}</td>
+                                        <td>{item.gioiTinh}</td>
+                                        <td>
+                                            <button
+                                                onClick={() => this.handleEditUser(item)}
+                                                className='btn-edit'>< i className="fas fa-pencil-alt"></i></button>
+
+                                            <button
+                                                onClick={() => this.handleDeleteUser(item)}
+                                                className='btn-delete'><i className="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </tbody >
+                </table >
+
+                <MdEditor style={{ height: '500px' }} renderHTML={text => mdParser.render(text)} onChange={handleEditorChange} />
+            </React.Fragment>
+
         );
     }
 

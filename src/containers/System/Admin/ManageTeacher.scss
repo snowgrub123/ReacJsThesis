@@ -1,0 +1,64 @@
+.manage-teacher-container {
+    padding: 10px;
+
+    .manage-teacher-title {
+        text-transform: uppercase;
+        text-align    : center;
+        margin        : 15px 0;
+        font-size     : 20px;
+        font-weight   : 600;
+    }
+
+    .manage-teacher-edit {}
+
+    .save-content-teacher {
+        // margin       : 0 auto;
+        margin-top   : 20px;
+        margin-right : 30px;
+        border-radius: 4px;
+        outline      : none;
+        border       : none;
+        padding      : 5px;
+        background   : red;
+        cursor       : pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+    }
+
+    .create-content-teacher {
+        margin-top   : 20px;
+        margin-bottom: 30px;
+        border-radius: 3px;
+        outline      : none;
+        border       : none;
+        padding      : 5px;
+        background   : green;
+        cursor       : pointer;
+        color        : white;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+
+    .more-infor {
+        display       : flex;
+        gap           : 15px;
+        padding-bottom: 15px;
+
+        .content-left {
+            width: 40%;
+        }
+
+        .content-right {
+            width: 60%;
+
+            .from-control {
+                width: 100%;
+            }
+        }
+    }
+}

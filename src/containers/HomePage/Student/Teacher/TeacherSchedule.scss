@@ -1,0 +1,71 @@
+.teacher-schedule-container {
+    border-right: 1px solid green;
+    height      : 100%;
+
+    .all-schedule {
+        select {
+            border-bottom: 2px solid #ddd;
+            border-top   : none;
+            border-right : none;
+            border-left  : none;
+            outline      : none;
+            cursor       : pointer;
+            padding      : 5px;
+            color        : #337ab7;
+            font-weight  : 500;
+        }
+    }
+
+    .all-available-time {
+
+        .text-calendar {
+            margin: 10px 0;
+            color : #333;
+
+            span {
+                text-transform: 5px;
+            }
+        }
+
+        .time-content {
+            .time-content-btn {
+                display  : flex;
+                gap      : 15px;
+                flex-wrap: wrap; // xuong 
+
+                .btn-vi {
+                    min-width: 120px;
+                }
+
+                .btn-en {
+                    min-width: 170px;
+                }
+
+                .no-schedule {
+                    font-style : italic;
+                    font-weight: 500;
+                }
+
+                button {
+                    padding         : 5px 10px;
+                    border          : none;
+                    outline         : none;
+                    background-color: grey;
+                    border-radius   : 3px;
+                    color           : #333;
+
+                    &:hover {
+                        background-color: #45c3d2;
+                        color           : white;
+                    }
+                }
+            }
+
+            .book-free {
+                margin-top: 10px;
+            }
+
+
+        }
+    }
+}
