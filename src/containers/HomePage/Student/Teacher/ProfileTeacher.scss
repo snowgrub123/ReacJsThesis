@@ -1,0 +1,33 @@
+.profile_teacher_container {
+    border: 1px solid red;
+
+    .intro-teacher {
+        display: flex;
+
+        .content-left {
+            background-size       : cover;
+            background-repeat     : no-repeat;
+            background-position   : center;
+            // background         : center center no-repeat;
+            width                 : 80px;
+            height                : 80px;
+            border-radius         : 50%;
+        }
+
+        .content-right {
+            background    : center center no-repeat;
+            width         : calc((100%-80px));
+            display       : flex;
+            flex-direction: column;
+            padding-left  : 10px;
+
+            .up {
+                font-weight: 600;
+            }
+
+            .down {
+                text-align: justify;
+            }
+        }
+    }
+}

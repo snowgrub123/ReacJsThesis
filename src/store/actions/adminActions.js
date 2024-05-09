@@ -322,16 +322,55 @@ export const fetchAllScheduleTime = () => {
     }
 
 }
-// return async (dispatch, getState) => {
-//     try {
-//         dispatch({ type: actionTypes.FETCH_GENDER_START })
-//         let respone = await getAllCodeService("POSITION");
-//         if (respone && respone.errCode === 0) {
-//             dispatch(fetchPositionSuccess(respone.data));
-//         } else {
-//             dispatch(fetchPositionFailed());
-//         }
-//     } catch (error) {
-//         dispatch(fetchPositionFailed());
-//         console.log('check fetchStart from error', error)
-//     }
+
+export const getAllRequiredTeacherInfor = () => {
+    return async (dispatch, getState) => {
+        try {
+            dispatch({
+                type: actionTypes.FETCH_REQUIRED_TEACHER_INFOR_START,
+            })
+            let responePrice = await getAllCodeService("PRICE");
+            console.log("1", responePrice)
+
+            let responePayment = await getAllCodeService("PAYMENT");
+            console.log("2", responePayment)
+
+            let responeProvince = await getAllCodeService("PROVINCE");
+            console.log("3", responeProvince)
+
+
+            // console.log("check time", respone)
+            if (responePrice && responePrice.errCode === 0
+                && responePayment && responePayment.errCode === 0
+                && responeProvince && responeProvince.errCode === 0
+            ) {
+                let data = {
+                    responePayment: responePayment.data,
+                    responePrice: responePrice.data,
+                    responeProvince: responeProvince.data
+                }
+                console.log("4", data)
+                dispatch(fetchRequiredTeacherInforSuccess(data))
+            } else {
+                dispatch(fetchRequiredTeacherInforFailed())
+            }
+        } catch (error) {
+            dispatch(fetchRequiredTeacherInforFailed())
+            console.log('fetchGenderStrart error', error)
+        }
+    }
+
+}
+export const fetchRequiredTeacherInforSuccess = (requiredData) => ({
+    type: actionTypes.FETCH_REQUIRED_TEACHER_INFOR_SUCCESS,
+    data: requiredData
+})
+export const fetchRequiredTeacherInforFailed = () => ({
+    type: actionTypes.FETCH_REQUIRED_TEACHER_INFOR_FAILED,
+})
+
+// FETCH_REQUIRED_TEACHER_INFOR_START: 'FETCH_REQUIRED_TEACHER_INFOR_START',
+//     FETCH_REQUIRED_TEACHER_INFOR_FAILED: 'FETCH_REQUIRED_TEACHER_INFOR_FAILED',
+//     FETCH_REQUIRED_TEACHER_INFOR_SUCCESS: 'FETCH_REQUIRED_TEACHER_INFOR_SUCCESS',
+
+

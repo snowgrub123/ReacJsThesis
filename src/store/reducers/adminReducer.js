@@ -9,7 +9,7 @@ const initialState = {
     topTeachers: [],
     allTeachers: [],
     allScheduleTime: [],
-
+    allRequiredTeacherInfor: [],
 }
 const adminReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -117,6 +117,22 @@ const adminReducer = (state = initialState, action) => {
             return {
                 ...state,
             }
+        // allRequiredTeacherInfor
+        // case actionTypes.FETCH_REQUIRED_TEACHER_INFOR_START:
+        //     return {
+        //         ...copyState,
+        // }
+        case actionTypes.FETCH_REQUIRED_TEACHER_INFOR_SUCCESS:
+            state.allRequiredTeacherInfor = action.data;
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_REQUIRED_TEACHER_INFOR_FAILED:
+            state.allRequiredTeacherInfor = [];
+            return {
+                ...state,
+            }
+
 
         default:
             return state;

@@ -6,6 +6,8 @@ import { getDetailTeacherInfoService } from '../../../../services/accService';
 import { languages } from '../../../../utils';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import TeacherSchedule from './TeacherSchedule';
+import TeacherExtrainfor from './TeacherExtrainfor';
+
 class DetailTeacher extends Component {
     constructor(props) {
         super(props);
@@ -21,7 +23,6 @@ class DetailTeacher extends Component {
                 currentTeacherID: id
             })
             let res = await getDetailTeacherInfoService(id);
-            console.log('check res', res)
             if (res && res.errCode === 0) {
                 this.setState({
                     detailTeacher: res.data
@@ -33,7 +34,6 @@ class DetailTeacher extends Component {
 
     }
     render() {
-        console.log("checkkkkkk", this.state)
         let { language } = this.props;
         let { detailTeacher } = this.state;
         let nameVi = '', nameEn = '';
@@ -71,7 +71,11 @@ class DetailTeacher extends Component {
                                 teacherIDFromParent={this.state.currentTeacherID}
                             />
                         </div>
-                        <div className='content-right'></div>
+                        <div className='content-right'>
+                            <TeacherExtrainfor
+                                teacherIDFromParent={this.state.currentTeacherID}
+                            />
+                        </div>
 
                     </div>
                     <div className='detail-infor-teacher'>

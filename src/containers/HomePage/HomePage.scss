@@ -1,22 +1,20 @@
 .general {
 
-    &.stage-classes,
+    &.stage-specialty,
     &.stage-teacher,
     &.stage-subject {
         // background-color: rgb(221, 54, 54);
         margin-bottom: 60px;
+        border       : 1px solid red;
     }
 
     &.stage-advertisement {
-        display             : flex !important;
-        flex-direction      : column !important;
-        margin-bottom       : 20px;
-        height              : 450px !important;
-        border-top          : 1px red;
-        border-bottom       : 1px solid red;
-        // border           : 1px solid red;
-        // display       : flex;
-        // flex-direction: column;
+        display       : flex !important;
+        flex-direction: column !important;
+        margin-bottom : 20px;
+        height        : 450px !important;
+        border-top    : 1px red;
+        border-bottom : 1px solid red;
 
         .advertisement-header {
             font-size  : 30px;
@@ -37,7 +35,6 @@
                     height: 350px;
                     width : 100%;
                 }
-
             }
 
             .advertisement-content-right {
@@ -56,13 +53,12 @@
         }
     }
 
-    margin                : 0 100px 0 100px;
-    height                : 350px;
-    // background-color   : rgb(240, 233, 233);
-    // width           : 100%;
-    display               : flex;
-    flex-direction        : column;
-
+    //     margin : 0 100px 0 100px;
+    //  height                : 350px;
+    //  // background-color   : rgb(240, 233, 233);
+    //  // width           : 100%;
+    //  display               : flex;
+    //  flex-direction        : column;
     .class-container {
         .class-header {
             display        : flex;
@@ -94,6 +90,7 @@
             text-align : center;
             height     : 90%;
             margin     : 0 50px;
+            border     : 1px solid green;
 
             .slick-slider {
                 height: 100%;
@@ -132,6 +129,8 @@
             }
 
             .class-customize {
+                border: 1px solid black;
+
                 display            : flex;
                 justify-content    : space-evenly;
                 height             : 270px;
@@ -140,13 +139,21 @@
                 border             : 1px solid rgb(165, 157, 157);
 
                 .class-img {
-                    margin         : 0 auto;
-                    background-size: cover;
-                    border         : 1px solid blue;
-                    cursor         : pointer;
+                    margin            : 0 auto;
+                    background-size   : cover;
+                    // border         : 1px solid blue;
+                    cursor            : pointer;
+                    border            : 1px solid black;
 
-                    &.stage-class {
-                        background: url('../../assets/class/Class.jpg') center no-repeat;
+                    &.stage-specialty-img {
+                        // background   : url('../../assets/class/Class.jpg') center no-repeat;
+                        width          : 150px;
+                        height         : 150px;
+                        border-radius  : 50%;
+                        margin-top     : 40px;
+                        background-size: contain;
+                        background-clip: border-box;
+                        // border: 1px solid black ip !important;
                     }
 
                     &.stage-teacher-img {
@@ -155,7 +162,7 @@
                         height       : 150px;
                         border-radius: 50%;
                         margin-top   : 19px;
-
+                        border       : 1px solid black;
                     }
 
                     &.stage-subject-img {

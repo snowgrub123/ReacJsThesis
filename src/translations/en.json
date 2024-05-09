@@ -24,12 +24,12 @@
             "manage-admin": "Manage-admin",
             "crud": "Edit User",
             "crud-redux": "Edit User by Redux",
-            "class": "Class",
-            "manage-class": "Manage-class",
+            "clinic": "clinic",
+            "manage-clinic": "Manage-clinic",
             "post": "Post",
             "manage-post": "Manage-post",
-            "subject": "Subject",
-            "manage-subject": "Manage-subject"
+            "specialty": "specialty",
+            "manage-specialty": "Manage-specialty"
         },
         "teacher": {
             "manage-schedule": "Manage Teacher's schedule"
@@ -53,7 +53,8 @@
     },
     "homepage": {
         "outstanding-teacher": "Last week's featured teacher",
-        "more-infor": "More infor"
+        "more-infor": "More infor",
+        "outstanding-speciality": "Populars Specialites "
     },
     "manage-schedule": {
         "title": "Manage teacher's appoinment",
@@ -67,6 +68,22 @@
             "no-schedule": "Teacher have no schedule during this period.Please come back in the next time or Choose another time!",
             "choose": "Chosse ",
             "book-free": " Book-Free"
+        }
+    },
+    "patient": {
+        "booking-modal": {
+            "title": "Information about book medical appointment",
+            "fullName": "Fullname",
+            "phoneNumber": "PhoneNumber",
+            "email": "email",
+            "address": "Address",
+            "reason": "Reason",
+            "birthday": "Birthday",
+            "gender": "Gender",
+            "btnConfirm": "Confirm",
+            "btnCancel": "Cancel",
+            "priceBooking": "Free Booking",
+            "price": "Price"
         }
     }
 }

@@ -22,11 +22,11 @@ export const adminMenu = [
 
         ]
     },
-    { //Quản lý Lớp Học
-        name: 'menu.admin.class',
+    { //Quản lý Phòng Kham
+        name: 'menu.admin.clinic',
         menus: [
             {
-                name: 'menu.admin.manage-class', link: '/system/manage-class'
+                name: 'menu.admin.manage-clinic', link: '/system/manage-clinic'
             }
         ]
     },
@@ -38,11 +38,11 @@ export const adminMenu = [
             },
         ]
     },
-    { //Quan ly Mon Hoc
-        name: 'menu.admin.subject',
+    { //Quan ly Phòng Khám
+        name: 'menu.admin.specialty',
         menus: [
             {
-                name: 'menu.admin.manage-subject', link: '/system/manage-subject'
+                name: 'menu.admin.manage-specialty', link: '/system/manage-specialty'
             },
         ]
     },

@@ -24,12 +24,12 @@
             "manage-admin": "Quản lý Admin",
             "crud": "Thêm sửa xóa người dùng",
             "crud-redux": "Edit User by Redux",
-            "class": "Lớp học",
-            "manage-class": "Quản Lý Lớp học",
+            "clinic": "Phòng Khám",
+            "manage-clinic": "Quản Lý Phòng Khám",
             "post": "Bài Đăng",
             "manage-post": "Quản Lý Bài Đăng",
-            "subject": "Môn học",
-            "manage-subject": "Quản Lý Môn học"
+            "specialty": "Chuyên khoa",
+            "manage-specialty": "Quản Lý Chuyên Khoa"
         },
         "teacher": {
             "manage-schedule": "Quản Lý Kế Hoạch Dạy Học"
@@ -53,7 +53,8 @@
     },
     "homepage": {
         "outstanding-teacher": "Giáo Viên Nổi Bật Trong Tuần",
-        "more-infor": "Xem Thêm"
+        "more-infor": "Xem Thêm",
+        "outstanding-speciality": "Chuyên khoa phổ biến"
     },
     "manage-schedule": {
         "title": "Quản Lý Lịch Hẹn Giáo Viên",
@@ -67,6 +68,22 @@
             "no-schedule": "Không có!",
             "choose": "Chọn ",
             "book-free": " Đặt Lịch Miễn Phí"
+        }
+    },
+    "patient": {
+        "booking-modal": {
+            "title": "Thông tin đặt lịch khám bệnh",
+            "fullName": "Họ và tên",
+            "phoneNumber": "Số Điện Thoại",
+            "email": "email",
+            "address": "Địa chỉ",
+            "reason": "Lý do khám bệnh",
+            "birthday": "Ngày Sinh",
+            "gender": "Giới tính",
+            "btnConfirm": "Xác nhận",
+            "btnCancel": "Hủy bỏ",
+            "priceBooking": "Miễn phí đặt lịch khám bệnh",
+            "price": "Giá khám"
         }
     }
 }
