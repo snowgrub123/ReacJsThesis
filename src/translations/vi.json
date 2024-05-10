@@ -85,5 +85,20 @@
             "priceBooking": "Miễn phí đặt lịch khám bệnh",
             "price": "Giá khám"
         }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Tạo Thêm Thông Tin Bác Sĩ",
+            "select-doctors": "Chọn Bác Sĩ",
+            "intro": "Thông Tin Giới Thiệu",
+            "save": "Lưu Thông Tin",
+            "price": "Giá Khám",
+            "payment": "Phương Thức Thanh Toán",
+            "province": "Tỉnh Thành Phố",
+            "nameClinic": "Tên Phòng Khám",
+            "addressClinic": "Địa Chỉ Phòng Khám",
+            "note": "Ghi Chú",
+            "speciality": "Chọn Chuyên Khoa"
+        }
     }
 }

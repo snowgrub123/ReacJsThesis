@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import * as actions from '../../../store/actions'
 import { languages } from '../../../utils';
 import { withRouter } from 'react-router';
-import { getAllSpecialty } from '../../../services/accService'
+import { getAllSpecialty } from '../../../services/accService';
 class Class extends Component {
     constructor(props) {
         super(props)
@@ -24,6 +24,11 @@ class Class extends Component {
             this.setState({
                 dataSpecialty: res.specialty ? res.specialty : []
             })
+        }
+    }
+    handleViewDetailTeacher = (speciality) => {
+        if (this.props.history) {
+            this.props.history.push(`/detail-specialty/${speciality.id}`)
         }
     }
 
@@ -47,7 +52,10 @@ class Class extends Component {
                                 && dataSpecialty.map((item, index) => {
                                     return (
                                         <div className='class-customize specialty-child'
-                                            key={index}>
+                                            key={index}
+                                            onClick={() => this.handleViewDetailTeacher(item)}
+
+                                        >
                                             <div className="class-img stage-specialty-img"
                                                 style={{ backgroundImage: `url(${item.hinhAnh})` }}
                                             />
@@ -77,4 +85,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Class);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Class));

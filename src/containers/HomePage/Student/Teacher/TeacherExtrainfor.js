@@ -13,6 +13,15 @@ class TeacherExtrainfor extends Component {
         }
     }
     async componentDidMount() {
+
+        if (this.props.teacherIDFromParent) {
+            let res = await getExtraTeacherByIDService(this.props.teacherIDFromParent);
+            if (res && res.errCode === 0) {
+                this.setState({
+                    extraInfor: res.data
+                })
+            }
+        }
     }
     async componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.teacherIDFromParent !== prevProps.teacherIDFromParent) {
@@ -79,10 +88,10 @@ class TeacherExtrainfor extends Component {
                     }
                     {isShowDetailInfor === true &&
                         <>
-                            <div className='title-price'>Price Study.</div>
+                            <div className='title-price'>Price.</div>
                             <div className='detail-infor'>
                                 <div className='price'>
-                                    <span className='left'>Gia kham</span>
+                                    <span className='left'>Giá Khám</span>
                                     <span className='right'>
                                         {extraInfor && extraInfor.priceTypeData && language === languages.VI
                                             &&

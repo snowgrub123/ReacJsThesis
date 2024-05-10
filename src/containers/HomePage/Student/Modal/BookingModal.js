@@ -124,8 +124,8 @@ class BookingModal extends Component {
         if (dataTime && !_.isEmpty(dataTime)) {
             giaoVienID = dataTime.giaoVienID
         }
-        console.log('check gender', this.state.genders)
-        console.log('check selected', this.state.selectedGender)
+        // console.log('check gender', this.state.genders)
+        // console.log('check selected', this.state.selectedGender)
 
         return (
             <Modal

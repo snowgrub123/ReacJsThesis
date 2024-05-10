@@ -128,7 +128,7 @@ class ManageSchedule extends Component {
             console.log('error save saveBulkScheduleTeacherService', res);
 
         }
-        console.log("check selected time: ", result)
+        // console.log("check selected time: ", result)
 
 
     }

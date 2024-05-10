@@ -85,5 +85,20 @@
             "priceBooking": "Free Booking",
             "price": "Price"
         }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": " Add more info's Doctor",
+            "select-doctors": "Choose Doctor",
+            "intro": " Information",
+            "save": " Save",
+            "price": "Price",
+            "payment": " Payment",
+            "province": " Province",
+            "nameClinic": " Name of Clinic",
+            "addressClinic": " Address Clinic",
+            "note": "Note",
+            "speciality": "Specialty"
+        }
     }
 }

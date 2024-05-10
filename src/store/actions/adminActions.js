@@ -7,7 +7,8 @@ import {
     editFromServive,
     getTopTeacherHomeService,
     getAllTeacherService,
-    saveDetailTeacherService
+    saveDetailTeacherService,
+    getAllSpecialty,
 } from '../../services/accService';
 import { data, type } from 'jquery';
 import { toast } from 'react-toastify';
@@ -338,16 +339,23 @@ export const getAllRequiredTeacherInfor = () => {
             let responeProvince = await getAllCodeService("PROVINCE");
             console.log("3", responeProvince)
 
+            let responeSpecialty = await getAllSpecialty();
+            console.log("4", responeSpecialty)
+
+
+
 
             // console.log("check time", respone)
             if (responePrice && responePrice.errCode === 0
                 && responePayment && responePayment.errCode === 0
                 && responeProvince && responeProvince.errCode === 0
+                && responeSpecialty && responeSpecialty.errCode === 0
             ) {
                 let data = {
                     responePayment: responePayment.data,
                     responePrice: responePrice.data,
-                    responeProvince: responeProvince.data
+                    responeProvince: responeProvince.data,
+                    responeSpecialty: responeSpecialty.specialty
                 }
                 console.log("4", data)
                 dispatch(fetchRequiredTeacherInforSuccess(data))

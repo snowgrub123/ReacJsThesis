@@ -1,0 +1,49 @@
+.specialty-detail-container {
+    margin-top: 75px;
+
+    .sreach-province {}
+
+    .desciption-specialty {
+        border: 1px solid red;
+    }
+
+    .detail-specialty-body {
+        margin: 0 100px;
+
+    }
+
+    .each-doctors {
+        display            : flex;
+        width              : 100%;
+        min-height         : 300px;
+        margin-top         : 15px;
+        // border    : 1px solid black;
+        background-color   : #fff;
+        box-shadow         : 0 1px 6px #20212447;
+        border-radius      : 8px;
+        padding            : 10px;
+        // margin-bottom   : 15px;
+
+        .content-left-detail {
+            width       : 60%;
+            border-right: 1px solid rgb(218, 213, 213);
+
+        }
+
+        .content-right-detail {
+            width     : 40%;
+            // border : 1px solid black;
+            padding   : 10px;
+
+            .teacher-extra-infor-container {
+                padding-left: 0 !important;
+                padding-top : 10px;
+                margin-top  : 10px;
+            }
+
+            .teacher-schedule-container {
+                border-bottom: 1px solid rgb(186, 182, 182);
+            }
+        }
+    }
+}

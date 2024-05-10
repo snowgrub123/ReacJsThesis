@@ -16,6 +16,7 @@ import HomePage from './HomePage/HomePage.js'
 import DetailTeacher from './HomePage/Student/Teacher/DetailTeacher.js';
 import Teacher from '../routes/Teacher.js';
 import CustomScrollbars from '../components/CustomScrollbars.js';
+import DetailSpecialty from './HomePage/Student/Specialty/DetailSpecialty.js';
 class App extends Component {
 
     handlePersistorState = () => {
@@ -54,6 +55,7 @@ class App extends Component {
 
                                     <Route path={path.HOMEPAGE} exact component={(HomePage)} />
                                     <Route path={path.DETAIL_TEACHER} component={DetailTeacher} />
+                                    <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
 
                                 </Switch>
                             </CustomScrollbars>
