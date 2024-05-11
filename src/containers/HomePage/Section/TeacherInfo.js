@@ -65,7 +65,7 @@ class TeacherInfo extends Component {
                                             />
 
 
-                                            <span className='title-under-img'>1</span>
+                                            {/* <span className='title-under-img'>1</span> */}
                                             <div className='position text-center'>
                                                 <div>{language === languages.VI ? nameVi : nameEn}</div>
                                                 {/* <div>{item.viTriID}</div> */}

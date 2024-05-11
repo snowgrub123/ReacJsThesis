@@ -38,8 +38,8 @@ class DetailTeacher extends Component {
         let { detailTeacher } = this.state;
         let nameVi = '', nameEn = '';
         if (detailTeacher && detailTeacher.positionData) {
-            nameVi = `${detailTeacher.positionData.value_vi},${detailTeacher.ho},${detailTeacher.ten}`
-            nameEn = `${detailTeacher.positionData.value_en},${detailTeacher.ho},${detailTeacher.ten}`
+            nameVi = `${detailTeacher.positionData.value_vi} ${detailTeacher.ho} ${detailTeacher.ten}`
+            nameEn = `${detailTeacher.positionData.value_en} ${detailTeacher.ho} ${detailTeacher.ten}`
         }
         return (
             <>

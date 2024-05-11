@@ -72,7 +72,7 @@ class HomeHeader extends Component {
 
                 {this.props.isShowBanner === true &&
                     <div className='home-body-container'>
-                        <div className='content-bodyUp'>
+                        {/* <div className='content-bodyUp'>
                             <div className='title1'>
                                 <FormattedMessage id="homecenter.title1"></FormattedMessage>
                             </div>
@@ -83,8 +83,8 @@ class HomeHeader extends Component {
 
                                 </input>}
                             </div>
-                        </div>
-                        <div className='content-bodyDown'>
+                        </div> */}
+                        {/* <div className='content-bodyDown'>
                             <div className='option'>
                                 <div className='option-child'>
                                     <div className='icon-option-child'>
@@ -111,7 +111,7 @@ class HomeHeader extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 }
             </React.Fragment >

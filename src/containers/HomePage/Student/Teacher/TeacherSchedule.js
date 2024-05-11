@@ -24,6 +24,12 @@ class TeacherSchedule extends Component {
     async componentDidMount() {
         let { language } = this.props;
         let allDays = this.getArrayDays(language);
+        if (this.props.teacherIDFromParent) {
+            let res = await getScheduleTeacherByDateService(this.props.teacherIDFromParent, allDays[0].value);
+            this.setState({
+                allAvailableTime: res.data ? res.data : []
+            })
+        }
         this.setState({
             allDays: allDays,
         })

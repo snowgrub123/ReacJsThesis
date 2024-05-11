@@ -32,7 +32,8 @@
             "manage-specialty": "Manage-specialty"
         },
         "teacher": {
-            "manage-schedule": "Manage Teacher's schedule"
+            "manage-schedule": "Manage Doctor's schedule",
+            "manage-patient": "Manage Patient's Booked"
         }
     },
     "manage-user": {

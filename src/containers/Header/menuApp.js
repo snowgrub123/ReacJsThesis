@@ -49,11 +49,14 @@ export const adminMenu = [
 ];
 
 export const teacherMenu = [
-    { //Quản Lý Kế Hoạch Dạy Học
+    {
         name: 'menu.admin.manage-user',
         menus: [
-            {
+            {//Quản Lý Kế Hoạch Khám bệnh
                 name: 'menu.teacher.manage-schedule', link: '/teacher/manage-schedule'
+            },
+            {//Quản Lý Bệnh nhân đặt lịch Khám bệnh 
+                name: 'menu.teacher.manage-patient', link: '/teacher/manage-patient'
             },
         ]
     }

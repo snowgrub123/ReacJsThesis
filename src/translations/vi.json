@@ -1,26 +1,26 @@
 {
     "homeheader": {
-        "speciality": "Lớp học",
-        "listClass": "Danh sách các lớp học",
-        "teacher": "Giáo viên",
-        "listTeacher": "Danh sách giảng viên",
-        "subject": "Môn học",
-        "listSubject": "Danh sách môn học",
+        "speciality": "Chuyên Khoa",
+        "listClass": "Danh sách các Chuyên Khoa",
+        "teacher": "Bác Sĩ",
+        "listTeacher": "Danh sách Bác Sĩ",
+        "subject": "Phòng Khám",
+        "listSubject": "Danh sách Phòng Khám",
         "information": "Thông tin",
         "detailInfo": "Thông tin bạn cần biết",
         "support": "Hỗ trợ",
         "welcome": "Xin Chao, "
     },
     "homecenter": {
-        "title1": "Tinh hoa kiến thức",
-        "title2": "Mở rộng tương lai",
+        "title1": "Sức Khỏe",
+        "title2": "",
         "placeHolder": "Tìm kiếm thông tin"
     },
     "menu": {
         "admin": {
             "manage-user": "Người dùng",
-            "manage-teacher": "Quản lý Giảng Viên",
-            "manage-student": "Quản lý Học Viên",
+            "manage-teacher": "Quản lý Bác Sĩ",
+            "manage-student": "Quản lý Bệnh Nhân",
             "manage-admin": "Quản lý Admin",
             "crud": "Thêm sửa xóa người dùng",
             "crud-redux": "Edit User by Redux",
@@ -32,7 +32,8 @@
             "manage-specialty": "Quản Lý Chuyên Khoa"
         },
         "teacher": {
-            "manage-schedule": "Quản Lý Kế Hoạch Dạy Học"
+            "manage-schedule": "Quản Lý Kế Hoạch Khám Bệnh",
+            "manage-patient": "Quản Lý lịch Hẹn Bệnh Nhân"
         }
     },
     "manage-user": {
@@ -52,13 +53,19 @@
         "edit": "Chỉnh sửa"
     },
     "homepage": {
-        "outstanding-teacher": "Giáo Viên Nổi Bật Trong Tuần",
+        "outstanding-teacher": "Bác Sĩ Nổi Bật Trong Tuần",
         "more-infor": "Xem Thêm",
         "outstanding-speciality": "Chuyên khoa phổ biến"
     },
     "manage-schedule": {
-        "title": "Quản Lý Lịch Hẹn Giáo Viên",
-        "choose-teacher": "Chọn giáo viên",
+        "title": "Quản Lý Lịch Hẹn Bác Sỹ",
+        "choose-teacher": "Chọn Bác Sỹ",
+        "choose-date": "Chọn ngày",
+        "save": "Lưu Thông Tin"
+    },
+    "manage-patient": {
+        "title": "Quản Lý Bệnh Nhân Khám Bệnh",
+        "choose-teacher": "Chọn Bác Sĩ",
         "choose-date": "Chọn ngày",
         "save": "Lưu Thông Tin"
     },

@@ -26,14 +26,17 @@ class HomePage extends Component {
             slidesToScroll: 2
         };
         return (
-            <div>
+            <>
                 <HomeHeader isShowBanner={true} />
-                <Class settings={settings} />
-                <TeacherInfo settings={settings} />
-                <Subject settings={settings} />
-                <Advertisement />
-                <HomeFotter />
-            </div >
+                <div className='HomePage'>
+                    <Class settings={settings} />
+                    <TeacherInfo settings={settings} />
+                    <Subject settings={settings} />
+                    <Advertisement />
+                    <HomeFotter />
+                </div >
+            </>
+
         );
     }
 

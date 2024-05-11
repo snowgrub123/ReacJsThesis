@@ -124,8 +124,8 @@ class BookingModal extends Component {
         if (dataTime && !_.isEmpty(dataTime)) {
             giaoVienID = dataTime.giaoVienID
         }
-        // console.log('check gender', this.state.genders)
-        // console.log('check selected', this.state.selectedGender)
+        console.log('check gender', this.state.genders)
+        console.log('check selected', this.state.selectedGender)
 
         return (
             <Modal
@@ -142,9 +142,11 @@ class BookingModal extends Component {
                         <span className='right'
                             onClick={closeBooking}
                         ><i className='fas fa-times'></i></span>
-                        <div className='price'>
-                            <FormattedMessage id="patient.booking-modal.price" />
-                            : 500.0000 VND
+                        <div className='price'
+                        // value={extraInfor.priceTypeData.value_vi}
+                        >
+                            {/* <FormattedMessage id="patient.booking-modal.price" /> */}
+
                         </div>
                     </div>
                     <div className='booking-modal-body'>
@@ -153,10 +155,12 @@ class BookingModal extends Component {
                                 giaoVienID={giaoVienID}
                                 isShowDescriptionTeacher={false}
                                 dataTime={dataTime}
+                                isShowLinkDetail={false}
+                                isShowPrice={true}
                             />
                         </div>
 
-                        <div className='row'>
+                        <div className='row '>
                             <div className='col-6'>
                                 <label>
                                     <FormattedMessage id="patient.booking-modal.fullName" />
@@ -211,7 +215,7 @@ class BookingModal extends Component {
                                 <label>
                                     <FormattedMessage id="patient.booking-modal.birthday" />
                                 </label>
-                                <DatePicker
+                                <DatePicker className='form-control'
                                     value={this.state.birthday}
                                     onChange={this.handleOnChangDatePicker}
                                 />

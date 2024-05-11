@@ -9,6 +9,7 @@ import {
     getAllTeacherService,
     saveDetailTeacherService,
     getAllSpecialty,
+    getAllClinic
 } from '../../services/accService';
 import { data, type } from 'jquery';
 import { toast } from 'react-toastify';
@@ -342,6 +343,9 @@ export const getAllRequiredTeacherInfor = () => {
             let responeSpecialty = await getAllSpecialty();
             console.log("4", responeSpecialty)
 
+            let responeClinic = await getAllClinic();
+            console.log("4", responeClinic)
+
 
 
 
@@ -350,12 +354,16 @@ export const getAllRequiredTeacherInfor = () => {
                 && responePayment && responePayment.errCode === 0
                 && responeProvince && responeProvince.errCode === 0
                 && responeSpecialty && responeSpecialty.errCode === 0
+                && responeClinic && responeClinic.errCode === 0
+
             ) {
                 let data = {
                     responePayment: responePayment.data,
                     responePrice: responePrice.data,
                     responeProvince: responeProvince.data,
-                    responeSpecialty: responeSpecialty.specialty
+                    responeSpecialty: responeSpecialty.specialty,
+                    responeClinic: responeClinic.data,
+
                 }
                 console.log("4", data)
                 dispatch(fetchRequiredTeacherInforSuccess(data))

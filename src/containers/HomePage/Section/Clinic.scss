@@ -1,0 +1,11 @@
+.clinic-child {
+    cursor: pointer;
+
+    .title-under-img {
+        padding: 10px 0;
+
+        &:hover {
+            color: aqua;
+        }
+    }
+}

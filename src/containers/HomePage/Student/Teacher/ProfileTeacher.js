@@ -7,6 +7,7 @@ import { getProfileTeacherByIDService } from '../../../../services/accService';
 import NumberFormat from 'react-number-format';
 import _ from 'lodash';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 class ProfileTeacher extends Component {
     constructor(props) {
         super(props);
@@ -35,12 +36,12 @@ class ProfileTeacher extends Component {
 
 
     async componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.props.language !== prevProps.language) {
-
-        }
-
+        if (this.props.language !== prevProps.language) { }
         if (this.props.giaoVienID !== prevProps.giaoVienID) {
-
+            let data = await this.getInforTeacher(this.props.giaoVienID);
+            this.setState({
+                dataProfile: data,
+            });
         }
     }
 
@@ -65,14 +66,15 @@ class ProfileTeacher extends Component {
     }
 
     render() {
-        let { language, isShowDescriptionTeacher, dataTime } = this.props;
+        let { language, isShowDescriptionTeacher, dataTime, giaoVienID, isShowLinkDetail,
+            isShowPrice } = this.props;
         let { dataProfile } = this.state;
         console.log('Chek dataProfile res', this.state)
 
         let nameVi = '', nameEn = '';
         if (dataProfile && dataProfile.positionData) {
-            nameVi = `${dataProfile.positionData.value_vi},${dataProfile.ho},${dataProfile.ten}`
-            nameEn = `${dataProfile.positionData.value_en},${dataProfile.ho},${dataProfile.ten}`
+            nameVi = `${dataProfile.positionData.value_vi} ${dataProfile.ho} ${dataProfile.ten}`
+            nameEn = `${dataProfile.positionData.value_en} ${dataProfile.ho} ${dataProfile.ten}`
         }
         return (
             <div className='profile_teacher_container'>
@@ -105,29 +107,36 @@ class ProfileTeacher extends Component {
                         </div>
                     </div>
                 </div>
-                <div className='price'>
-                    {dataProfile && dataProfile.priceTypeData && language === languages.VI
-                        &&
-                        <NumberFormat
-                            className='currency'
-                            value={dataProfile.teacher_Infor.priceTypeData.value_vi}
-                            displayType={'text'}
-                            thousandSeparator={true}
-                            suffix={'VND'}
-                        />
-                    }
+                {isShowLinkDetail === true &&
+                    <div className='view-detail-doctor'>
+                        <Link to={`/detail-teacher/${giaoVienID}`}>Xem Thêm</Link>
+                    </div>
+                }
+                {isShowPrice === true &&
+                    <div className='price'>
+                        {dataProfile && dataProfile.priceTypeData && language === languages.VI
+                            &&
+                            <NumberFormat
+                                className='currency'
+                                value={dataProfile.teacher_Infor.priceTypeData.value_vi}
+                                displayType={'text'}
+                                thousandSeparator={true}
+                                suffix={'VND'}
+                            />
+                        }
 
-                    {dataProfile && dataProfile.priceTypeData && language === languages.EN
-                        &&
-                        <NumberFormat
-                            className='currency'
-                            value={dataProfile.teacher_Infor.priceTypeData.value_en}
-                            displayType={'text'}
-                            thousandSeparator={true}
-                            suffix={'USD'}
-                        />
-                    }
-                </div>
+                        {dataProfile && dataProfile.priceTypeData && language === languages.EN
+                            &&
+                            <NumberFormat
+                                className='currency'
+                                value={dataProfile.teacher_Infor.priceTypeData.value_en}
+                                displayType={'text'}
+                                thousandSeparator={true}
+                                suffix={'USD'}
+                            />
+                        }
+                    </div>
+                }
             </div >
         );
     }
