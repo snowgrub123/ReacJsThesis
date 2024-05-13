@@ -44,7 +44,8 @@
 
                 &.active {
                     a {
-                        color: yellow !important;
+                        opacity   : 0.9;
+                        // color  :  !important;
                     }
 
                     background-color: white;

@@ -33,7 +33,8 @@
         },
         "teacher": {
             "manage-schedule": "Quản Lý Kế Hoạch Khám Bệnh",
-            "manage-patient": "Quản Lý lịch Hẹn Bệnh Nhân"
+            "manage-patient": "Quản Lý lịch Hẹn Bệnh Nhân",
+            "title-choose-date": "Chọn Ngày Khám"
         }
     },
     "manage-user": {

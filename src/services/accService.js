@@ -87,6 +87,11 @@ const getDetailClinic = (data) => {
     return axios.get(`/api/get-detail-clinic-by-id?id=${data.id}}`)
 
 }
+
+const getAllPatient = (data) => {
+    return axios.get(`/api/get-list-patient-booked?giaoVienID=${data.giaoVienID}&date=${data.date}`)
+
+}
 export {
     handleLoginUser,
     getAllUsers,
@@ -108,5 +113,6 @@ export {
     getDetailSpecialty,
     createNewClinic,
     getAllClinic,
-    getDetailClinic
+    getDetailClinic,
+    getAllPatient
 }

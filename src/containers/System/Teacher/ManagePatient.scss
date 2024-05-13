@@ -9,39 +9,44 @@
 
     }
 
-    .date {
-        display       : flex;
-        flex-direction: column;
+    .manage-patient-body {
+        padding: 0 20px;
+        width  : 100%;
 
-        .flatpickr-input {
-            width : 200px;
-            height: 35px;
+        .table-manage-patient {
+            table {
+                font-family    : arial, sans-serif;
+                border-collapse: collapse;
+                width          : 100%;
+            }
+
+            td,
+            th {
+                border    : 1px solid #dddddd;
+                text-align: left;
+                padding   : 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
         }
-    }
 
-    .pick-hour-container {
-        padding-top   : 20px;
-        padding-bottom: 20px;
-        display       : flex;
-        gap           : 20px;
-        flex-wrap     : wrap;
-
-        button {
-            padding: 5px 15px;
-            border : 1px solid grey;
+        .btn-confirm-mp {
+            margin-right : 10px;
+            height       : 25px;
+            border-radius: 3px;
+            background   : rgb(176, 228, 176);
+            border       : none;
         }
-    }
 
-    .btn-patient {
-        &.active {
-            background: green;
+        .btn-sent-mp {
+            // margin-right: 10px;
+            height       : 25px;
+            border-radius: 3px;
+            background   : #e6e64c;
+            border       : none;
         }
-    }
-
-    .btn-save-patient {
-        margin-top: 20px;
-
-
     }
 
 }

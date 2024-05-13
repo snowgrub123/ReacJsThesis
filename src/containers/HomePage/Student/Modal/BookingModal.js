@@ -13,6 +13,7 @@ import moment from 'moment';
 import { toast } from 'react-toastify';
 import { postPatientBookingAppointmentService } from "../../../../services/accService"
 import DatePicker from '../../../../components/Input/DatePicker';
+// const mdParser = new MarkdownIt(/* Markdown-it options */);
 class BookingModal extends Component {
     constructor(props) {
         super(props);
@@ -23,7 +24,7 @@ class BookingModal extends Component {
             address: '',
             reason: '',
             birthday: '',
-            genders: '',
+            listgenders: '',
             timeType: '',
             giaoVienID: '',
             selectedGender: '',
@@ -68,13 +69,15 @@ class BookingModal extends Component {
 
     handleConfirmBooking = async () => {
         let date = new Date(this.state.birthday).getTime();
+        console.log("Chek data tiem ", this.props.dataTime)
         let res = await postPatientBookingAppointmentService({
             fullname: this.state.fullname,
             phoneNumber: this.state.phoneNumber,
             email: this.state.email,
             address: this.state.address,
             reason: this.state.reason,
-            date: date,
+            date: this.props.dataTime.date,
+            birthday: date,
             selectedGender: this.state.selectedGender.value,
             timeType: this.state.timeType,
             giaoVienID: this.state.giaoVienID,
@@ -92,12 +95,12 @@ class BookingModal extends Component {
     async componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.language !== prevProps.language) {
             this.setState({
-                genders: this.buildDataGender(this.props.genders)
+                listgenders: this.buildDataGender(this.props.genders)
             })
         }
         if (this.props.genders !== prevProps.genders) {
             this.setState({
-                genders: this.buildDataGender(this.props.genders)
+                listgenders: this.buildDataGender(this.props.genders)
             })
         }
         if (this.props.dataTime !== prevProps.dataTime) {
@@ -118,6 +121,8 @@ class BookingModal extends Component {
         // } dataTime
     }
     render() {
+        let { listgenders } = this.state;
+
         let { isOpenModal, closeBooking, dataTime } = this.props;
         // console.log("Check props from modal", this.props)
         let giaoVienID = '';
@@ -220,6 +225,17 @@ class BookingModal extends Component {
                                     onChange={this.handleOnChangDatePicker}
                                 />
                             </div>
+                            <div className='col-4 form-group'>
+                                <label>Choose price</label>
+                                <Select
+                                    value={this.state.selectedPrice}
+                                    onChange={this.handleChangeSelectTeacherInfor}
+                                    name='selectedPrice'
+                                    placeholder={'Choose Price'}
+                                    options={this.state.listPrice}
+                                >
+                                </Select>
+                            </div>
                             <div className='col-6 gender'>
                                 <label>
                                     <FormattedMessage id="patient.booking-modal.gender" />
@@ -227,7 +243,7 @@ class BookingModal extends Component {
                                 <Select
                                     value={this.state.selectedGender}
                                     onChange={this.handleOnChangSelect}
-                                    options={this.state.genders}
+                                    options={this.state.listgenders}
                                 />
                             </div>
                         </div>
