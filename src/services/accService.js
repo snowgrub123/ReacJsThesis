@@ -62,7 +62,9 @@ const getProfileTeacherByIDService = (teacherID) => {
 const postPatientBookingAppointmentService = (data) => {
     return axios.post('/api/patient-book-appoiment', data)
 }
-
+const postConFirmBookAppointmentService = (data) => {
+    return axios.post('/api/confirm-book-appoiment', data)
+}
 
 const createNewSpecialty = (data) => {
     return axios.post('/api/create-new-specialty', data)
@@ -92,6 +94,11 @@ const getAllPatient = (data) => {
     return axios.get(`/api/get-list-patient-booked?giaoVienID=${data.giaoVienID}&date=${data.date}`)
 
 }
+// /api/send-bill
+const postBilltoPatient = (data) => {
+    return axios.post(`/api/send-bill`, data)
+}
+// api/confirm-book-appoiment
 export {
     handleLoginUser,
     getAllUsers,
@@ -114,5 +121,7 @@ export {
     createNewClinic,
     getAllClinic,
     getDetailClinic,
-    getAllPatient
+    getAllPatient,
+    postBilltoPatient,
+    postConFirmBookAppointmentService
 }

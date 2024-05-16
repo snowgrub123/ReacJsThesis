@@ -13,7 +13,9 @@ import moment from 'moment';
 import { toast } from 'react-toastify';
 import { postPatientBookingAppointmentService } from "../../../../services/accService"
 import DatePicker from '../../../../components/Input/DatePicker';
-// const mdParser = new MarkdownIt(/* Markdown-it options */);
+import { data } from 'jquery';
+
+
 class BookingModal extends Component {
     constructor(props) {
         super(props);
@@ -66,9 +68,36 @@ class BookingModal extends Component {
             selectedGender: selectedOption
         })
     }
+    bulidTimeBooking = (dataTime) => {
+        let { language } = this.props;
+        if (dataTime && !_.isEmpty(dataTime)) {
+            let time = language === languages.VI ?
+                dataTime.timeTypeData.value_vi : dataTime.timeTypeData.value_en;
 
+            let date = language === languages.VI ?
+                moment.unix(+dataTime.date / 1000).format('dddd - DD/MM/YYYY')
+                :
+                moment.unix(+dataTime.date / 1000).locale('ddd - DD/MM/YYYY');
+
+            return `${time} - ${date}`
+        }
+        return ''
+    }
+    bulidDoctorName = (dataTime) => {
+        let { language } = this.props;
+        if (dataTime && !_.isEmpty(dataTime)) {
+            let name = language === languages.VI ?
+                `${dataTime.doctorData.ho} ${dataTime.doctorData.ten}`
+                :
+                `${dataTime.doctorData.ten} ${dataTime.doctorData.ho}`
+            return name
+        }
+        return ''
+    }
     handleConfirmBooking = async () => {
         let date = new Date(this.state.birthday).getTime();
+        let timeString = this.bulidTimeBooking(this.props.dataTime)
+        let doctorName = this.bulidDoctorName(this.props.dataTime)
         console.log("Chek data tiem ", this.props.dataTime)
         let res = await postPatientBookingAppointmentService({
             fullname: this.state.fullname,
@@ -81,6 +110,9 @@ class BookingModal extends Component {
             selectedGender: this.state.selectedGender.value,
             timeType: this.state.timeType,
             giaoVienID: this.state.giaoVienID,
+            language: this.props.language,
+            timeString: timeString,
+            doctorName: doctorName
         })
         console.log('Res confirm', res)
         if (res && res.errCode === 0) {
@@ -129,7 +161,7 @@ class BookingModal extends Component {
         if (dataTime && !_.isEmpty(dataTime)) {
             giaoVienID = dataTime.giaoVienID
         }
-        console.log('check gender', this.state.genders)
+        console.log('check dataTime form Bookin', dataTime)
         console.log('check selected', this.state.selectedGender)
 
         return (

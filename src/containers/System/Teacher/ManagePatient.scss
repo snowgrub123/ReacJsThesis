@@ -1,4 +1,15 @@
+div._loading_over_wrapper {
+    position: unset;
+
+    .__loading_overlay_overlay {
+        z-index: 9000000000000000000000 !important;
+    }
+}
+
+
 .manage-patient-container {
+    height: 100%;
+
     .m-s-title {
         text-transform: uppercase;
         margin-top    : 15px;

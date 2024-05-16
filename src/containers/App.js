@@ -18,6 +18,8 @@ import Teacher from '../routes/Teacher.js';
 import CustomScrollbars from '../components/CustomScrollbars.js';
 import DetailSpecialty from './HomePage/Student/Specialty/DetailSpecialty.js';
 import DetailClinic from './HomePage/Student/Clinic/DetailClinic.js';
+import ConfirmBookEmail from './HomePage/Student/ConfirmBookEmail.js';
+
 class App extends Component {
 
     handlePersistorState = () => {
@@ -59,6 +61,7 @@ class App extends Component {
                                     <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
                                     <Route path={path.DETAIL_CLINIC} component={DetailClinic} />
 
+                                    <Route path={path.CONFIRM_BOOKING} component={ConfirmBookEmail} />
 
                                 </Switch>
                             </CustomScrollbars>
