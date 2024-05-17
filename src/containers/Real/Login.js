@@ -1,8 +1,8 @@
-import $ from 'jquery';
+import $, { data } from 'jquery';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from "connected-react-router";
-
+import { Redirect } from 'react-router-dom';
 // import * as actions from "../store/actions";
 import * as actions from "../../store/actions";
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -18,7 +18,9 @@ class Login extends Component {
             username: '',
             password: '',
             showpass: false,
-            errValue: ''
+            errValue: '',
+            isRegister: false,
+            linkToRedirect: '',
         }
         this.btnLogin = React.createRef();
     }
@@ -66,9 +68,26 @@ class Login extends Component {
             showpass: !this.state.showpass
         })
     }
+    handleRegister = () => {
+        // alert('Click me')
+        const { navigate } = this.props;
+        // const redirectPath = '/system/user-redux';
+        const redirectPath = '/home';
+
+        // const redirectPath = '/home';
+
+        navigate(`${redirectPath}`);
+        // if (this.props.history) {
+        //     this.props.history.push(`/system/user-redux`)
+        // }
+        // const redirectPath = '/system/user-manage';
+
+    }
 
     render() {
+        const { isRegister, linkToRedirect } = this.state
         //JSX
+        // let linkToRedirect = isRegister ? '/system/user-redux' : '/login';
         return (
             <div className='login-background'>
                 <div className='login-container'>
@@ -101,10 +120,18 @@ class Login extends Component {
                         <div className='col-12' style={{ color: 'red' }}>
                             {this.state.errValue}
                         </div>
-                        <div className='col-12 login-forget'>
-                            <span>
-                                Quên mật khẩu?
-                            </span>
+                        <div className='login-register-forget'>
+                            <div className='col-6 login-register'
+                                onClick={() => this.handleRegister()}
+                            >
+                                {/* <Redirect to={linkToRedirect} /> */}
+                                Đăng Ký
+                            </div>
+                            <div className='col-6 login-forget'>
+                                <span>
+                                    Quên mật khẩu?
+                                </span>
+                            </div>
                         </div>
                         <div className='col-12'>
                             <button className='btnlogin' onClick={() => { this.handleLogin() }}>Login</button>

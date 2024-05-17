@@ -19,6 +19,7 @@ import CustomScrollbars from '../components/CustomScrollbars.js';
 import DetailSpecialty from './HomePage/Student/Specialty/DetailSpecialty.js';
 import DetailClinic from './HomePage/Student/Clinic/DetailClinic.js';
 import ConfirmBookEmail from './HomePage/Student/ConfirmBookEmail.js';
+import RegisterAcc from './System/Teacher/RegisterAcc.js';
 
 class App extends Component {
 
@@ -62,6 +63,7 @@ class App extends Component {
                                     <Route path={path.DETAIL_CLINIC} component={DetailClinic} />
 
                                     <Route path={path.CONFIRM_BOOKING} component={ConfirmBookEmail} />
+                                    <Route path={'/system/user-redux'} component={RegisterAcc} />
 
                                 </Switch>
                             </CustomScrollbars>

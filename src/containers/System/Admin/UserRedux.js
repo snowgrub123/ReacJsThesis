@@ -223,8 +223,8 @@ class UserRedux extends Component {
         return (
             <div>
                 <div className="user-redux-container" >
-                    <div className='title'>
-                        User Redux mangage with khang dang
+                    <div className='title-redux'>
+                        ĐĂNG KÝ TÀI KHOẢN NGƯỜI DÙNG
                     </div>
                     <div>{isLoadingGender === true ? 'Loading Gender' : ''}</div>
                     <div className='user-redux-body'>
