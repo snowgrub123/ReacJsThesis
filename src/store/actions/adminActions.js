@@ -9,7 +9,8 @@ import {
     getAllTeacherService,
     saveDetailTeacherService,
     getAllSpecialty,
-    getAllClinic
+    getAllClinic,
+    getDetailTeacherInfoService
 } from '../../services/accService';
 import { data, type } from 'jquery';
 import { toast } from 'react-toastify';
@@ -388,5 +389,34 @@ export const fetchRequiredTeacherInforFailed = () => ({
 // FETCH_REQUIRED_TEACHER_INFOR_START: 'FETCH_REQUIRED_TEACHER_INFOR_START',
 //     FETCH_REQUIRED_TEACHER_INFOR_FAILED: 'FETCH_REQUIRED_TEACHER_INFOR_FAILED',
 //     FETCH_REQUIRED_TEACHER_INFOR_SUCCESS: 'FETCH_REQUIRED_TEACHER_INFOR_SUCCESS',
+
+
+
+
+export const fetchTeacherByID = (inputID) => {
+    return async (dispatch, getState) => {
+        try {
+            let respone = await getDetailTeacherInfoService(inputID);
+            if (respone && respone.errCode === 0) {
+                dispatch({
+                    type: actionTypes.FETCH_ONE_TEACHER_SUCCESS,
+                    dataOneTeachers: respone.data
+                })
+            } else {
+                dispatch({
+                    type: actionTypes.FETCH_ONE_TEACHER_FAILED,
+                })
+            }
+        } catch (error) {
+            console.log('FETCH_ONE_TEACHER_FAILED', error)
+            dispatch({
+                type: actionTypes.FETCH_ONE_TEACHER_FAILED,
+            })
+        }
+    }
+}
+
+// FETCH_ONE_TEACHER_SUCCESS: 'FETCH_ONE_TEACHER_SUCCESS',
+//     FETCH_ONE_TEACHER_FAILED: 'FETCH_ONE_TEACHER_FAILED',
 
 

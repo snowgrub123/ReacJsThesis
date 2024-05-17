@@ -77,7 +77,7 @@ class Login extends Component {
                         <div className='col-12 form-group input-login'>
                             <div className='input-username'>
                                 <i className="fas fa-user iconuser"></i>
-                                <input type='text' className='form-control' placeholder='User name'
+                                <input type='email' className='form-control' placeholder='Email'
                                     value={this.state.username}
                                     onChange={(event) => this.handleOnChangeUsername(event)}
                                 >
@@ -103,7 +103,7 @@ class Login extends Component {
                         </div>
                         <div className='col-12 login-forget'>
                             <span>
-                                Forgot Password?
+                                Quên mật khẩu?
                             </span>
                         </div>
                         <div className='col-12'>

@@ -31,7 +31,6 @@
             outline        : none;
 
             .booking-modal-body {
-                padding       : 20px;
                 height        : 100%;
                 width         : 100%;
                 display       : flex;
@@ -47,6 +46,11 @@
                     color  : black;
                     z-index: 1000000;
                 }
+
+                // .row {
+   //     margin : 20px;
+   //     padding: 20px;
+   // }
             }
 
 

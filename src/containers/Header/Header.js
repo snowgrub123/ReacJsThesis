@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 import * as actions from "../../store/actions";
 import Navigator from '../../components/Navigator';
-import { adminMenu, teacherMenu } from './menuApp';
+import { adminMenu, teacherMenu, patientMenu } from './menuApp';
+import HomePage from '../HomePage/HomePage';
 import './Header.scss';
 import { languages, USER_ROLE } from '../../utils'
 import { FormattedMessage } from 'react-intl';
@@ -29,6 +30,9 @@ class Header extends Component {
             }
             if (role === USER_ROLE.TEACHER) {
                 menu = teacherMenu;
+            }
+            if (role === USER_ROLE.STUDENT) {
+                menu = patientMenu;
             }
 
         }
@@ -59,6 +63,7 @@ class Header extends Component {
                         EN</span>
                     <div className="btn btn-logout"
                         onClick={processLogout} title='Log out'>
+                        <span>Đăng Xuất</span>
                         <i className="fas fa-sign-out-alt"></i>
                     </div>
                 </div>

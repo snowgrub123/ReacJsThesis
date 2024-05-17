@@ -130,13 +130,13 @@ class ManagePatient extends Component {
                     <div className='manage-patient-container'>
                         <div className='m-s-title'>
                             <FormattedMessage
-                                id="manage-booking.manage-schedule"
+                                id="menu.teacher.manage-patient"
                             />
                         </div>
                         <div className='manage-patient-body'>
                             <div className='col-12 form-group'>
                                 <label><FormattedMessage
-                                    id="admin.teacher.manage-patient"
+                                    id="menu.teacher.manage-patient"
                                 /></label>
                                 <DatePicker className='form-control'
                                     value={this.state.currentDate}

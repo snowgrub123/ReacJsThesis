@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import HomeHeader from './HomeHeader';
 import Class from './Section/Class';
@@ -11,6 +11,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Advertisement from './Section/Advertisement';
 import HomeFotter from './HomeFotter';
 import { event } from 'jquery';
+import Header from '../Header/Header';
+import Login from '../Real/Login';
 class HomePage extends Component {
 
 
@@ -27,6 +29,7 @@ class HomePage extends Component {
         };
         return (
             <>
+
                 <HomeHeader isShowBanner={true} />
                 <div className='HomePage'>
                     <Class settings={settings} />

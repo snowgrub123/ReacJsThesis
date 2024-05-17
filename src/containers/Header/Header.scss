@@ -18,7 +18,7 @@
             margin-right   : 15px;
             margin-left    : 10px;
             cursor         : pointer;
-            color          : white;
+            color          : black;
             // opacity     : 0.7;
 
             &.active {
@@ -29,7 +29,7 @@
 
         .languages-en {
             cursor    : pointer;
-            color     : white;
+            color     : black;
             // opacity: 0.7;
 
             &.active {
@@ -51,6 +51,11 @@
 
         &:hover {
             background-color: darken($colormain, 5);
+        }
+
+        span {
+            margin-right: 15px;
+            margin-left : 20px;
         }
 
         i {

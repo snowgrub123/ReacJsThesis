@@ -1,13 +1,18 @@
 import React, { Component, Fragment } from 'react';
-import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './HomeHeader.scss'
 import { languages } from '../../utils';
 import { FormattedMessage } from 'react-intl';
 import { changeLanguageFromApp } from '../../store/actions';
 import { withRouter } from 'react-router';
+import Header from '../Header/Header';
+import { Redirect } from 'react-router-dom';
+import _ from 'lodash';
 class HomeHeader extends Component {
 
+    handleChangeLanguages = (language) => {
+        this.props.changeLanguageFromAppHome(language)
+    }
     changeLanguage = (language) => {
         this.props.changeLanguageFromAppHome(language)
         // fire redux event: actions (event)
@@ -18,14 +23,27 @@ class HomeHeader extends Component {
             this.props.history.push(`/home`)
         }
     }
+    homeLogin = () => {
+        if (this.props.history) {
+            this.props.history.push(`/login`)
+        }
+    }
+
     render() {
-        let language = this.props.language;
+        const { isLoggedIn, language, } = this.props;
+        let linkToRedirect = isLoggedIn ? '/home' : '/login';
         return (
             <React.Fragment>
+                <div className='header-container-home'>
+                    {this.props.isLoggedIn && <Header />
+                    }
+                </div>
                 <div className='home-header-container'>
                     <div className='home-header-content'>
                         <div className='left-content'>
-                            <i className="fas fa-list"></i>
+                            <i className="fas fa-list detail-home"
+
+                            ></i>
                             <div className='logo-header'
                                 onClick={() => this.returnToHome()}
                             ></div>
@@ -66,6 +84,14 @@ class HomeHeader extends Component {
                             </div>
                             <div className={language === languages.VI ? 'language-vi active' : 'language-vi'}><span onClick={() => this.changeLanguage(languages.VI)}>VN</span></div>
                             <div className={language === languages.EN ? 'language-en active' : 'language-en'}><span onClick={() => this.changeLanguage(languages.EN)}>EN</span></div>
+                            <div className='sign-in'
+                                onClick={() => this.homeLogin()}
+                            >
+                                {isLoggedIn && isLoggedIn === true ?
+                                    <div></div>
+                                    : <div>Đăng Nhập</div>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

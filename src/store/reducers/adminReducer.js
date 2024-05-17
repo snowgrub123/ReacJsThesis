@@ -5,7 +5,7 @@ const initialState = {
     positions: [],
     isLoadingGender: false,
     users: [],
-
+    oneTeacher: [],
     topTeachers: [],
     allTeachers: [],
     allScheduleTime: [],
@@ -106,6 +106,8 @@ const adminReducer = (state = initialState, action) => {
                 ...state,
             }
 
+
+
         //Time
         case actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS:
             state.allScheduleTime = action.dataTime;
@@ -133,6 +135,17 @@ const adminReducer = (state = initialState, action) => {
                 ...state,
             }
 
+        //one teacher
+        case actionTypes.FETCH_ONE_TEACHER_SUCCESS:
+            state.oneTeacher = action.dataOneTeachers;
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_ONE_TEACHER_FAILED:
+            state.oneTeacher = [];
+            return {
+                ...state,
+            }
 
         default:
             return state;

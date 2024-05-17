@@ -17,9 +17,10 @@
         }
 
         .menu-group-name {
-            line-height : 40px;
-            padding     : 0 15px;
-            border-right: 1px solid $border;
+            line-height    : 40px;
+            padding        : 0 30px;
+            border-right   : 1px solid $border;
+            // margin-right: 10px !;
 
             &:first-child {
                 border-left: 1px solid $border;

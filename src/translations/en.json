@@ -30,6 +30,11 @@
             "manage-post": "Manage-post",
             "specialty": "specialty",
             "manage-specialty": "Manage-specialty"
+        },
+        "teacher": {
+            "manage-schedule": "Manage Doctor's schedule",
+            "manage-patient": "Manage Patient's Booked",
+            "title-choose-date": "Choose-Date"
         }
     },
     "manage-user": {
