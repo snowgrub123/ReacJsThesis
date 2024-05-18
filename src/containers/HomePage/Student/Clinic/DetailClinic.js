@@ -86,60 +86,66 @@ class DetailClinic extends Component {
         console.log('check state clinic', this.state)
 
         return (
-            <div className='specialty-detail-container'>
+            <>
+                {/* <div className='header-container-specialty'> */}
                 <HomeHeader></HomeHeader>
-                <div className='detail-specialty-body'>
-                    <div className='desciption-specialty'>
-                        {DetailClinic && !_.isEmpty(DetailClinic)
-                            &&
-                            <>
-                                <div><h1>{DetailClinic.tenPhongKham}</h1></div>
-                                <div>Địa chỉ: {DetailClinic.diaChi}</div>
-                                <div dangerouslySetInnerHTML={{ __html: DetailClinic.mieuTaHTML }}>
-                                </div>
-                            </>
+                {/* </div> */}
+                <div className='specialty-detail-container'>
+                    <div className='detail-specialty-body'>
+                        <div className='desciption-specialty'>
+                            {DetailClinic && !_.isEmpty(DetailClinic)
+                                &&
+                                <>
+                                    <div><h1>{DetailClinic.tenPhongKham}</h1></div>
+                                    <div>Địa chỉ: {DetailClinic.diaChi}</div>
+                                    <div dangerouslySetInnerHTML={{ __html: DetailClinic.mieuTaHTML }}>
+                                    </div>
+                                </>
 
+                            }
+
+                        </div>
+                        {arrDortorID && arrDortorID.length > 0 &&
+                            arrDortorID.map((item, index) => {
+                                return (<div className='each-doctors'
+                                    key={index}
+                                >
+                                    <div className='content-left-detail'>
+                                        <div className='teaher-infor'>
+                                            <ProfileTeacher
+                                                giaoVienID={item}
+                                                isShowDescriptionTeacher={true}
+                                                isShowLinkDetail={true}
+                                                isShowPrice={false}
+                                            />
+                                        </div>
+
+                                    </div>
+                                    <div className='content-right-detail'>
+                                        <div >
+                                            <TeacherSchedule
+                                                teacherIDFromParent={item}
+                                            />
+                                        </div>
+                                        <div><TeacherExtrainfor
+                                            teacherIDFromParent={item}
+                                        /></div>
+
+                                    </div>
+                                </div>
+
+
+                                )
+                            })
                         }
 
                     </div>
-                    {arrDortorID && arrDortorID.length > 0 &&
-                        arrDortorID.map((item, index) => {
-                            return (<div className='each-doctors'
-                                key={index}
-                            >
-                                <div className='content-left-detail'>
-                                    <div className='teaher-infor'>
-                                        <ProfileTeacher
-                                            giaoVienID={item}
-                                            isShowDescriptionTeacher={true}
-                                            isShowLinkDetail={true}
-                                            isShowPrice={false}
-                                        />
-                                    </div>
 
-                                </div>
-                                <div className='content-right-detail'>
-                                    <div >
-                                        <TeacherSchedule
-                                            teacherIDFromParent={item}
-                                        />
-                                    </div>
-                                    <div><TeacherExtrainfor
-                                        teacherIDFromParent={item}
-                                    /></div>
-
-                                </div>
-                            </div>
-
-
-                            )
-                        })
-                    }
 
                 </div>
 
+            </>
 
-            </div>
         );
     }
 }

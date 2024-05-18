@@ -101,73 +101,76 @@ class DetailSpecialty extends Component {
         let { arrDortorID, detailSpecialty, listProvince } = this.state
 
         return (
-            <div className='specialty-detail-container'>
+            <>
                 <HomeHeader></HomeHeader>
-                <div className='detail-specialty-body'>
-                    <div className='desciption-specialty'>
-                        {detailSpecialty && !_.isEmpty(detailSpecialty)
-                            &&
-                            <div dangerouslySetInnerHTML={{ __html: detailSpecialty.mieuTaHTML }}>
+                <div className='specialty-detail-container'>
+                    <div className='detail-specialty-body'>
+                        <div className='desciption-specialty'>
+                            {detailSpecialty && !_.isEmpty(detailSpecialty)
+                                &&
+                                <div dangerouslySetInnerHTML={{ __html: detailSpecialty.mieuTaHTML }}>
 
-                            </div>
+                                </div>
+                            }
+
+                        </div>
+                        <div className='sreach-province' >
+                            <select onChange={(event) => this.handleOnchangeSelect(event)}>
+                                {listProvince && listProvince.length > 0 &&
+                                    listProvince.map((item, index) => {
+                                        return (
+                                            <option key={index}
+                                                value={item.keyMap}
+                                            >
+                                                {language === languages.VI ? item.value_vi : item.value_en}
+                                            </option>
+                                        )
+                                    })
+                                }
+
+                            </select>
+                        </div>
+
+                        {arrDortorID && arrDortorID.length > 0 &&
+                            arrDortorID.map((item, index) => {
+                                return (<div className='each-doctors'
+                                    key={index}
+                                >
+                                    <div className='content-left-detail'>
+                                        <div className='teaher-infor'>
+                                            <ProfileTeacher
+                                                giaoVienID={item}
+                                                isShowDescriptionTeacher={true}
+                                                isShowLinkDetail={true}
+                                                isShowPrice={false}
+                                            />
+                                        </div>
+
+                                    </div>
+                                    <div className='content-right-detail'>
+                                        <div >
+                                            <TeacherSchedule
+                                                teacherIDFromParent={item}
+                                            />
+                                        </div>
+                                        <div><TeacherExtrainfor
+                                            teacherIDFromParent={item}
+                                        /></div>
+
+                                    </div>
+                                </div>
+
+
+                                )
+                            })
                         }
 
                     </div>
-                    <div className='sreach-province' >
-                        <select onChange={(event) => this.handleOnchangeSelect(event)}>
-                            {listProvince && listProvince.length > 0 &&
-                                listProvince.map((item, index) => {
-                                    return (
-                                        <option key={index}
-                                            value={item.keyMap}
-                                        >
-                                            {language === languages.VI ? item.value_vi : item.value_en}
-                                        </option>
-                                    )
-                                })
-                            }
 
-                        </select>
-                    </div>
-
-                    {arrDortorID && arrDortorID.length > 0 &&
-                        arrDortorID.map((item, index) => {
-                            return (<div className='each-doctors'
-                                key={index}
-                            >
-                                <div className='content-left-detail'>
-                                    <div className='teaher-infor'>
-                                        <ProfileTeacher
-                                            giaoVienID={item}
-                                            isShowDescriptionTeacher={true}
-                                            isShowLinkDetail={true}
-                                            isShowPrice={false}
-                                        />
-                                    </div>
-
-                                </div>
-                                <div className='content-right-detail'>
-                                    <div >
-                                        <TeacherSchedule
-                                            teacherIDFromParent={item}
-                                        />
-                                    </div>
-                                    <div><TeacherExtrainfor
-                                        teacherIDFromParent={item}
-                                    /></div>
-
-                                </div>
-                            </div>
-
-
-                            )
-                        })
-                    }
 
                 </div>
+            </>
 
-
-            </div>
         );
     }
 }

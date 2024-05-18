@@ -12,6 +12,8 @@
         // border       : 1px solid red;
         background-color: #edfffa;
         padding-bottom  : 25px;
+        background-color: rgb(210, 237, 237);
+
     }
 
     &.stage-advertisement {
@@ -66,6 +68,8 @@
     //  display               : flex;
     //  flex-direction        : column;
     .class-container {
+        background-color: rgb(210, 237, 237);
+
         .class-header {
             display        : flex;
             justify-content: space-between;
@@ -73,7 +77,7 @@
 
             .class-header-title {
                 font-size: 30px;
-                margin   : 10px 10px 5px 20px;
+                margin   : 10px 0 5px 20px;
             }
 
             .class-header-detail {
@@ -92,12 +96,12 @@
         }
 
         .class-content {
-            align-items           : center;
-            text-align            : center;
-            height                : 90%;
-            margin                : 0 50px;
+            align-items              : center;
+            text-align               : center;
+            height                   : 90%;
+            margin                   : 0 50px;
             // border          : 1px solid green;
-            background-color      : white;
+            // background-color      : white;
             // display            : flex;
             // flex-direction     : row;
 
@@ -140,18 +144,18 @@
 
             .class-customize {
                 // border: 1px solid black;
-                display               : flex;
-                justify-content       : space-evenly;
-                // margin-left        : 10px;
-                height                : 270px;
-                cursor                : pointer;
-                // background-color: aquamarine;
-                border                : 1px solid rgb(165, 157, 157);
-                border-radius         : 10px;
+                display         : flex;
+                justify-content : space-evenly;
+                background-color: white;
+                height          : 230px;
+                cursor          : pointer;
+                border-right    : 3px solid rgb(210, 237, 237);
 
                 .class-img {
-                    margin: 0 auto;
-                    cursor: pointer;
+                    margin          : 0 auto;
+                    cursor          : pointer;
+                    background-color: white;
+                    margin-bottom   : 10px;
 
 
 
